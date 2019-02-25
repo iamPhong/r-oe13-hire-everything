@@ -47,4 +47,32 @@ $(document).ready(function() {
   $(window).on("popstate", function() {
    $.get(location.href);
   });
+
+  $('.owl-carousel').owlCarousel({
+    items: 8,
+    loop: true,
+    margin: 0,
+    dots: false,
+    responsiveClass: true,
+    autoplay: 100,
+    responsive: {
+      0: {
+        items: 2,
+        nav: false
+      },
+      600: {
+        items: 4,
+        nav: false
+      },
+      700: {
+        items: 5,
+        nav: false
+      },
+      1000: {
+        items: 8,
+        nav: false,
+        loop: true
+      }
+    }
+  })
 });

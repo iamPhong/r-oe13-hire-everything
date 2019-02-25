@@ -28,6 +28,8 @@ gem "elevatezoom-rails", "~> 1.0.0"
 gem "kaminari", "~> 1.1.1"
 gem "bootstrap-kaminari-views", "~> 0.0.5"
 gem "i18n-js", "~> 3.2.1"
+gem "owlcarousel-rails"
+gem "impressionist"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

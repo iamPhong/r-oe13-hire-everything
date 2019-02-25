@@ -54,7 +54,11 @@
           <div class="post-tit ">
             <h1 class="tit-seo"><%= t ".title" %> <%= @lease.product_name %></h1>
           </div>
-
+          <p class="views">
+            <i>
+              (<%= t ".views" %> <%= @lease.impressionist_count(filter: :session_hash) %>)
+            </i>
+          </p>
           <p class="price">
             <span class="tit"><%= t ".price_rent" %></span>
             <span class="txt">

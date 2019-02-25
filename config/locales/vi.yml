@@ -50,6 +50,7 @@ vi:
         edit_news_lease: "Cập nhật tin đăng"
         list_lease: "Danh sách cho thuê"
       show:
+        views: "Lượt xem"
         list_lease: "Danh sách cho thuê"
         title: "Cho thuê"
         price_rent: "Giá thuê:"
@@ -205,4 +206,16 @@ vi:
       pay: "Nạp tiền"
   static_pages:
     home:
-      test: "Đây là trang home"
+      solgan1: "CHO THUÊ ĐỒ ÍT DÙNG..."
+      slogan2: "ĐỂ KIẾM TIỀN!"
+      slogan3: "THUÊ ĐỒ KHI CẦN DÙNG..."
+      slogan4: "ĐỂ TIẾT KIỆM TIỀN"
+      sharing: "The Sharing Economy"
+      search_place: "Gõ tên sản phẩm, dịch vụ cần tìm"
+      iwant: "TÔI MUỐN THUÊ"
+      product_care: "SẢN PHẨM QUAN TÂM NHIỀU"
+      lease: "CHO THUÊ"
+      price: "Giá:"
+      more: "Xem thêm"
+      list_need_rent: "DANH SÁCH TIN CẦN THUÊ"
+      need_rent: "[Cần thuê]"

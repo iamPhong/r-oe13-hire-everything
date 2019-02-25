@@ -9,4 +9,8 @@ class NewsLease < ApplicationRecord
   scope :select_newslease, -> {select :id, :image_id, :category_id, :product_name, :status}
   scope :load_myleases, -> myuser {where user_id: myuser}
   scope :order_desc, -> {order(created_at: :desc)}
+  scope :select_views_hot, -> {select :id, :image_id, :category_id, :product_name, :place_id, :price_type, :price_value}
+  scope :approved, -> (status){where status: status}
+  scope :order_desc_views, -> {order(views: :desc)}
+  is_impressionable
 end

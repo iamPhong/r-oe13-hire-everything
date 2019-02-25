@@ -7,6 +7,8 @@ class NewsNeedRent < ApplicationRecord
   scope :select_newsrents, -> {select :id, :picture, :category_id, :product_name, :status}
   scope :load_myrents, -> myuser {where user_id: myuser}
   scope :order_desc, -> {order(created_at: :desc)}
+  scope :select_homerents, -> {select :id, :product_name}
+  scope :approved, -> (status){where status: status}
 
   private
   def photo_size

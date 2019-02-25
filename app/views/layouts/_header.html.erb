@@ -23,7 +23,7 @@
           </button>
           <ul class="dropdown-menu">
             <li class="getHome active">
-              <%= link_to t(".home"), "#" %>
+              <%= link_to t(".home"), root_path %>
             </li>
             <li class="getGioiThieu">
               <%= link_to t(".about"), "#" %>
@@ -160,7 +160,7 @@
     <nav class="navbar navbar-default" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <%= link_to "#" do %>
+          <%= link_to root_path do %>
             <%= image_tag("logo.png", alt:"thuedo.vn", class:"for-pc img-responsive") %>
           <% end %>
         </div>
@@ -169,7 +169,7 @@
           <div class="search-child">
             <ul class="nav navbar-nav menu-hidden main-menu hidden-xs">
               <li class="getHome active">
-                <%= link_to t(".home"), "#" %>
+                <%= link_to t(".home"), root_path %>
               </li>
               <li class="getGioiThieu">
                 <%= link_to t(".about"), "#" %>

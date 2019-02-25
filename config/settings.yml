@@ -4,3 +4,5 @@ lat_default: 21.027451
 lng_default: 105.834169
 new_lease_page: 8
 new_rent_page: 8
+home_leases_hot: 8
+home_rents: 6

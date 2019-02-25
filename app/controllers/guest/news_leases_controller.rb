@@ -1,13 +1,14 @@
 class Guest::NewsLeasesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :show
   before_action :set_lease, except: %i(myleases new create)
   before_action :correct_user, only: %i(edit destroy)
+  before_action :list_category, only: %i(new edit)
+  impressionist actions: [:show], unique: [:session_hash]
 
   def new
     @lease = NewsLease.new
     @lease.build_place
     @lease.build_image
-    @category = Category.all
   end
 
   def create
@@ -21,9 +22,7 @@ class Guest::NewsLeasesController < ApplicationController
     end
   end
 
-  def edit
-    @category = Category.all
-  end
+  def edit; end
 
   def update
     if @lease.update lease_params
@@ -34,7 +33,12 @@ class Guest::NewsLeasesController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    if @lease.status?
+      impressionist(@lease)
+      @lease.update(views: @lease.impressionist_count(:filter=>:session_hash))
+    end
+  end
 
   def myleases
     @leases = NewsLease.select_newslease.load_myleases(current_user.id).order_desc.page(params[:page]).per(Settings.new_lease_page)
