@@ -1,5 +1,46 @@
 vi:
   file_less_than: "Cần nhỏ hơn 5MB"
+  complete: "Thành công"
+  error: "Thất bại"
+  guest:
+    news_leases:
+      form:
+        main_picture: "Ảnh chính"
+        sub_picture: "Ảnh phụ"
+        help_size: "Dung lượng ảnh tải lên tối đa 8MB"
+        info_product: "Thông tin sản phẩm"
+        type_product: "Nghành hàng"
+        name_product: "Tên sản phẩm"
+        cost_lease: "Giá thuê"
+        day: "/ngày"
+        week: "/tuần"
+        month: "/tháng"
+        deposit: "Đặt cọc"
+        money: "Tiền"
+        paper: "Giấy tờ"
+        paper_placeholder: "CMTND, Sổ đỏ, Bằng lái,Thẻ sinh viên"
+        place: "Địa điểm"
+        help_place_1: "Nhập tên Đường/Phố hoặc Xã/Phường/Thị Trấn"
+        help_place_2: "(Nên chọn địa chỉ gợi ý sẵn để tăng độ chính xác)"
+        place_holder: "Đường, phố, xã, phường, thị trấn"
+        description: "Mô tả"
+        cansell: "Có thể bán"
+        keysearch: "Từ khóa"
+        select_type_product: "---Chọn ngành hàng---"
+        help_keysearch: "Từ khóa giúp người dùng tìm kiếm Tin đăng của bạn dễ dàng hơn."
+        example_key: "Ví dụ: Xe 4 chỗ, Thuê xe giá rẻ, Máy chiếu giá rẻ"
+        info_owner_prod: "thông tin người đăng sản phẩm"
+        name: "Tên:"
+        phone_number: "Số điện thoại"
+        example_phone: "Ví dụ: 0123456789, 012-345-6789, 012 345 6789"
+        btn_post: "Đăng tin"
+        notice_title: "lưu ý khi đăng tin"
+        notice_1: "Cần có ít nhất 1 ảnh chính"
+        notice_2: "Mỗi tin đăng chỉ rao cho 1 sản phẩm"
+        notice_3: "Tin đăng phải viết bằng tiếng Việt có dấu"
+      new:
+        post_news_lease: "Đăng tin cho thuê"
+        list_lease: "Danh sách cho thuê"
   layouts:
     footer:
       slogan: "Save Money, Earn Money, Be Handsome"
@@ -55,8 +96,9 @@ vi:
       login: "Đăng nhập"
       signup: "Đăng kí"
   shared:
-    sidebar:
+    iwant:
       iwant: "TÔI MUỐN THUÊ"
+    sidebar:
       other_product: "Sản phẩm khác"
       desktop: "Bàn làm việc"
       man_acc: "Quản lý cá nhân"

@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2019_03_01_015144) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "name"
+    t.string "icon"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -30,15 +31,23 @@ ActiveRecord::Schema.define(version: 2019_03_01_015144) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "main_photo"
+    t.string "sub_photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "news_leases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "type_id"
     t.bigint "user_id"
     t.bigint "category_id"
-    t.integer "format_cost"
-    t.integer "deposit_cost"
-    t.text "deposit_identify"
+    t.bigint "place_id"
+    t.bigint "image_id"
+    t.integer "price_type"
+    t.integer "price_value"
+    t.integer "deposit_price"
+    t.string "deposit_paper"
     t.string "product_name"
-    t.string "address"
     t.text "description"
     t.integer "sell"
     t.string "key_search"
@@ -48,12 +57,12 @@ ActiveRecord::Schema.define(version: 2019_03_01_015144) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_news_leases_on_category_id"
-    t.index ["type_id"], name: "index_news_leases_on_type_id"
+    t.index ["image_id"], name: "index_news_leases_on_image_id"
+    t.index ["place_id"], name: "index_news_leases_on_place_id"
     t.index ["user_id"], name: "index_news_leases_on_user_id"
   end
 
   create_table "news_need_rents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "type_id"
     t.bigint "user_id"
     t.bigint "category_id"
     t.string "product_name"
@@ -65,7 +74,6 @@ ActiveRecord::Schema.define(version: 2019_03_01_015144) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_news_need_rents_on_category_id"
-    t.index ["type_id"], name: "index_news_need_rents_on_type_id"
     t.index ["user_id"], name: "index_news_need_rents_on_user_id"
   end
 
@@ -77,12 +85,12 @@ ActiveRecord::Schema.define(version: 2019_03_01_015144) do
     t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 
-  create_table "types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "name"
-    t.bigint "category_id"
+  create_table "places", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "lat"
+    t.string "lng"
+    t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_types_on_category_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -109,10 +117,9 @@ ActiveRecord::Schema.define(version: 2019_03_01_015144) do
   add_foreign_key "comments", "news_need_rents"
   add_foreign_key "comments", "users"
   add_foreign_key "news_leases", "categories"
-  add_foreign_key "news_leases", "types"
+  add_foreign_key "news_leases", "images"
+  add_foreign_key "news_leases", "places"
   add_foreign_key "news_leases", "users"
   add_foreign_key "news_need_rents", "categories"
-  add_foreign_key "news_need_rents", "types"
   add_foreign_key "news_need_rents", "users"
-  add_foreign_key "types", "categories"
 end

@@ -1,0 +1,35 @@
+<%= javascript_include_tag "guest/news_leases.js" %>
+<div id="product" class="post-lease-page">
+  <div class="container">
+    <div class="row cate-crumb">
+      <div class="col-sm-3 col-md-3 col-lg-3 sidebar">
+        <%= render "shared/iwant" %>
+      </div>
+      <div class="col-sm-9 col-md-9 col-lg-9">
+        <ul class="tit-pro">
+          <li class="btn-home">
+            <%= link_to root_path do %>
+            <%= image_tag("home.png") %>
+          <% end %>
+          </li>
+          <li class="arrow">
+            <i class="fa fa-angle-right"></i>
+          </li>
+          <li>
+            <%= link_to t(".list_lease"),"#" %>
+          </li>
+          <li class="arrow">
+            <i class="fa fa-angle-right"></i>
+          </li>
+          <li>
+            <span><%= t ".post_news_lease" %></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row cfi-load-page">
+      <%= render "form" %>
+    </div>
+  </div>
+</div>
+<script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>&callback=initMapnew&libraries=places"></script>
