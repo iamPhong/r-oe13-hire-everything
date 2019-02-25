@@ -1,8 +1,8 @@
 class Guest::NewsNeedRentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_rent, except: %i(new create)
+  before_action :set_rent, except: %i(myrents new create)
   before_action :list_category, only: %i(edit new)
-  before_action :correct_user, only: %i(edit update)
+  before_action :correct_user, only: %i(edit update destroy)
 
   def new
     @rent = NewsNeedRent.new
@@ -31,6 +31,23 @@ class Guest::NewsNeedRentsController < ApplicationController
   end
 
   def show; end
+
+  def myrents
+    @rents = NewsNeedRent.select_newsrents.load_myrents(current_user.id).order_desc.page(params[:page]).per(Settings.new_rent_page)
+    render "myrents"
+  end
+
+  def destroy
+    respond_to do |format|
+      if @rent.destroy
+        format.js {}
+        format.html {flash[:success] = t("complete")}
+      else
+        format.js {}
+        format.html {flash[:danger] = t("error")}
+      end
+    end
+  end
 
   private
 

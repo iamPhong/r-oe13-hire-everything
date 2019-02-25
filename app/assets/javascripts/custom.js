@@ -33,4 +33,18 @@ $(document).ready(function() {
       reader.readAsDataURL(file);
    })
   };
+
+  $(document).on("turbolinks:load", function() {
+    execute();
+  });
+
+  function execute() {
+    $(".pagination a").on("click", function() {
+      history.pushState(null, null, $(this).attr("href"));
+    });
+  }
+
+  $(window).on("popstate", function() {
+   $.get(location.href);
+  });
 });
