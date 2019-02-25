@@ -81,6 +81,24 @@ vi:
         lease: "Cho thuê"
         edit: "Sửa"
         delete: "Xóa"
+    news_need_rents:
+      form:
+        category: "Ngành hàng"
+        choose_category: "---Chọn ngành hàng---"
+        name_rent: "Tên đồ cần thuê"
+        description: "Mô tả"
+        picture: "Hình ảnh"
+        address: "Địa điểm"
+        phone_number: "Số điện thoại"
+        phone_help: "Ví dụ: 0123456789, 012-345-6789, 012 345 6789"
+      new:
+        post_rent: "Đăng tin"
+        list_rent: "Danh sách cần thuê"
+        post_news_rent: "Đăng tin cần thuê"
+        hgroup_1: "Với mong muốn"
+        thuedo: "thuedo.vn"
+        hgroup_2: "sẽ giúp bạn tìm thuê được mọi thứ mình cần,"
+        hgroup_3: "bạn vui lòng điền các thông tin dưới đây:"
   layouts:
     footer:
       slogan: "Save Money, Earn Money, Be Handsome"

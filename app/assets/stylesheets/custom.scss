@@ -1436,27 +1436,27 @@ input[type=text] {
 //MY LEASES
 
 .list-lease table thead {
-  background: #4286F5;
+  background: $back_primary;
 }
 
 .list-lease table thead th {
-  color: #fff;
+  color: $white;
   font-size: 14px;
   font-weight: 300;
   text-align: center;
-  border-right: 1px solid#fff;
-  border-top: 5px solid#4286F5 !important;
-  border-bottom: 5px solid#4286F5;
+  border-right: 1px solid $white;
+  border-top: 5px solid $back_primary !important;
+  border-bottom: 5px solid $back_primary;
   padding: 8px 3px;
 }
 
 .list-lease table thead th:last-child {
-  border-right: 1px solid#4286F5;
+  border-right: 1px solid$back_primary;
 }
 
 .list-lease table tr td {
   vertical-align: middle;
-  border: 1px solid#ddd;
+  border: 1px solid $white_li;
   font-size: 14px;
   text-align: center;
 }
@@ -1471,7 +1471,7 @@ input[type=text] {
 
 .list-lease td .btn-link,
 .list-lease td a {
-  color: #424242;
+  color: $lease_box_a;
 }
 
 .list-lease .td-check i {
@@ -1479,7 +1479,7 @@ input[type=text] {
   bottom: 5px;
   font-size: 20px;
   right: 5px;
-  color: #4285F6;
+  color: $blue_lighter;
   cursor: pointer;
   top: inherit;
 }
@@ -1502,7 +1502,7 @@ input[type=text] {
 .list-lease .ul3 li a i,
 .list-lease .ul3 li button i {
   padding-right: 5px;
-  color: #F4A338;
+  color: $orange_light;
   font-size: 16px;
 }
 
@@ -1528,4 +1528,75 @@ a:hover {
 
 .fa-check {
   color: green !important;
+}
+
+//NEWS NEED RENTS
+
+.post hgroup h4 {
+  padding: 15px 10px;
+  border: 1px dashed $white_li;
+  margin-bottom: 30px;
+  width: auto;
+  margin: 0 auto;
+  text-align: left;
+  color: $blue_lighter;
+  display: inline-block;
+  line-height: 1.2;
+  margin-left: 100px;
+}
+
+.post hgroup span {
+  color: $orange_light;
+}
+
+.post-hire .form-horizontal {
+  max-width: 700px;
+}
+
+.post .form-group {
+  width: 100%;
+  float: left;
+  margin-top: 20px;
+}
+
+.post.post-hire .form-group {
+  float: none;
+}
+
+.require {
+  color: red;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.post .form-group select {
+  border-radius: 0;
+  border-color: $white_li;
+}
+
+.lease-upload.ul7 {
+  width: auto;
+  margin-top: 0;
+  margin-right: -1%;
+  margin-left: -1%;
+}
+
+.post .form-group button {
+  padding: 6px 30px;
+}
+
+.post-hire .lease-upload li.uploaded img {
+  position: static;
+  margin-left: 0;
+  margin-top: 0;
+}
+
+.lease-upload li.uploaded img {
+  max-height: none;
+  max-height: 100%;
+}
+
+.lease-upload li img {
+  max-width: 100%;
+  max-height: 60px;
 }
