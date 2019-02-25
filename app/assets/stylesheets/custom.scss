@@ -2331,3 +2331,12 @@ a:hover {
 .h-70 {
   height: 70px;
 }
+
+.div-txt-search {
+  font-size: 25px;
+}
+
+.div-txt-search .a-state,
+.div-txt-search.a-state {
+  color: $orange_hov;
+}

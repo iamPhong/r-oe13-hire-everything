@@ -33,7 +33,7 @@
       </p>
       <p class="div-dat over-dot">
         <span class="sp-dat"><%= t ".deposit" %></span>
-        <span class="dat-money"><%= s.deposit_price %> đ</span>
+        <span class="dat-money"><%= s.deposit_price %> đ/<%= s.deposit_paper if s.deposit_paper? %></span>
       </p>
       <p class="item-address over-dot">
         <i class="fa fa-map-marker"></i>

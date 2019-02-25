@@ -30,15 +30,17 @@
 </div>
 <div id="search" class="hidden-xs">
   <div class="container">
-    <div class="input-group search">
-      <input class="form-control cfi-search-input ui-autocomplete-input" name="q" type="text" value=""
-       placeholder="<%= t ".search_place" %>" data="autocomplete-search-main" autocomplete="off">
-      <span class="input-group-addon btn-s-submit">
-        <button type="submit" class="btn btn-primary cfi-btt-search">
-          <i class="fa fa-search fa-2x"></i>
-        </button>
-      </span>
-    </div>
+    <%= search_form_for @q, url: search_guest_news_leases_path, html: { method: :get } do |f| %>
+      <div class="input-group search">
+        <%= f.text_field :product_name, class:"form-control cfi-search-input ui-autocomplete-input",
+        placeholder: t(".search_place"), data:"autocomplete-search-main", autocomplete:"off" %>
+        <span class="input-group-addon btn-s-submit">
+          <button type="submit" class="btn btn-primary cfi-btt-search">
+            <i class="fa fa-search fa-2x"></i>
+          </button>
+        </span>
+      </div>
+    <% end %>
   </div>
 </div>
 <div id="content">

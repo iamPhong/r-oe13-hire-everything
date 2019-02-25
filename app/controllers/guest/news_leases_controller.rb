@@ -1,8 +1,8 @@
 class Guest::NewsLeasesController < ApplicationController
   before_action :authenticate_user!, except: :show
-  before_action :set_lease, except: %i(myleases new create)
+  before_action :set_lease, except: %i(myleases new create search)
   before_action :correct_user, only: %i(edit destroy)
-  before_action :list_category, only: %i(new edit)
+  before_action :list_category, only: %i(new edit search)
   impressionist actions: [:show], unique: [:session_hash]
 
   def new
@@ -55,6 +55,12 @@ class Guest::NewsLeasesController < ApplicationController
         format.html {flash[:danger] = t("error")}
       end
     end
+  end
+
+  def search
+    @key_search = params[:q][:product_name]
+    @q = NewsLease.ransack(product_name_cont: @key_search)
+    @result = @q.result(distinct: true).where(status: true).page(params[:page]).per(Settings.page_lease_category)
   end
 
   private

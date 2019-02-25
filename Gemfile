@@ -31,6 +31,7 @@ gem "i18n-js", "~> 3.2.1"
 gem "owlcarousel-rails"
 gem "impressionist"
 gem "ratyrate", :github => "wazery/ratyrate"
+gem "ransack"
 
 
 group :development, :test do
