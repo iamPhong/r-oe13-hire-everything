@@ -1,1 +1,114 @@
-this is show
+<%= javascript_include_tag "guest/news_need_rents.js" %>
+<div id="product" class="post-lease-page">
+  <div class="container">
+    <div class="row cate-crumb">
+      <div class="col-sm-3 col-md-3 col-lg-3 sidebar">
+        <%= render "shared/iwant" %>
+      </div>
+      <div class="col-sm-9 col-md-9 col-lg-9">
+        <ul class="tit-pro">
+          <li class="btn-home">
+            <%= link_to root_path do %>
+            <%= image_tag("home.png") %>
+            <% end %>
+          </li>
+          <li class="arrow">
+            <i class="fa fa-angle-right"></i>
+          </li>
+          <li>
+            <%= link_to t(".list_rent"),"#" %>
+          </li>
+          <li class="arrow">
+            <i class="fa fa-angle-right"></i>
+          </li>
+          <li>
+            <span><%= @rent.category.name %></span>
+          </li>
+          <li class="arrow">
+            <i class="fa fa-angle-right"></i>
+          </li>
+          <li>
+            <span><%= @rent.product_name %></span>
+          </li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div class="row detail ">
+            <div class="col-sm-12">
+              <div class="col-sm-4 left-detail">
+                <div class="wishlist-control">
+                  <i class="heart fa fa-heart-o fa-2x pull-right"></i>
+                </div>
+                <% if @rent.picture? %>
+                <%= image_tag(@rent.picture.url, class:"img-big", id:"img-main-big") %>
+                <% else %>
+                <%= image_tag("no-image.png", class:"img-big", id:"img-main-big") %>
+                <% end %>
+              </div>
+              <div class="col-sm-8 right-detail">
+                <span class="triangle"></span>
+                <h1 class="post-tit">
+                  <%= t ".title" %> <%= @rent.product_name %>
+                </h1>
+                <p>
+                  <%= t ".address" %> <%= @rent.address %>
+                </p>
+                <p>
+                  <%= t ".info" %> <%= @rent.user.email %>
+                </p>
+                <p>
+                  <%= link_to "#", style:"color:#4285F6" do %>
+                  <%= t ".target_rent" %>
+                  <% end %>
+                </p>
+                <div class="div-online">
+                  <div class="dropdown">
+                    <button class="btn btn-warning phone-detail">
+                      <i class="fa fa-phone"></i>
+                      <%= t ".contact" %>
+                    </button>
+                  </div>
+                  <div class="phone-info dropdown-menu">
+                    <i class="fa fa-close fa-2x"></i>
+                    <p>
+                      <span><%= t ".note_tit" %></span>
+                      <%= t ".note_1" %><br>
+                      <%= t ".note_2" %>
+                    </p>
+                    <%= link_to "tel:#{@rent.phone_number}", class:"btn btn-warning", style:"margin: 5px 20px" do %>
+                    <i class="fa fa-phone"></i>
+                    <%= @rent.phone_number %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 comment-product">
+              <div class="comment-detail">
+                <div class="desc">
+                  <h2 class="post-desc"><%= t ".description" %></h2>
+                  <p class="line-blue">
+                    <span></span>
+                  </p>
+                  <div class="desc-content">
+                    <%= @rent.description.html_safe %>
+                  </div>
+                </div>
+                <div class="comment">
+                  <span class="count-com">
+                    0 <%= t ".comment" %>
+                  </span>
+                  <textarea id="comment" placeholder="<%= t ".place_btn" %>" class="form-control"></textarea>
+                  <button class="btn btn-warning pull-right" id="post-comment" data-type="2">
+                    <%= t ".btn_text" %>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -107,6 +107,20 @@ vi:
         thuedo: "thuedo.vn"
         hgroup_2: "sẽ giúp bạn tìm thuê được mọi thứ mình cần,"
         hgroup_3: "bạn vui lòng điền các thông tin dưới đây:"
+      show:
+        list_rent: "Danh sách cần thuê"
+        title: "[Cần thuê]"
+        address: "Địa điểm:"
+        info: "Người cần thuê:"
+        target_rent: "(Xem các tin cho thuê của thành viên này...)"
+        contact: "Bấm để hiện số"
+        note_tit: "Ghi chú:"
+        note_1: "Khi bạn liên hệ, hãy nói:"
+        note_2: '"Tìm thấy thông tin trên trang web thuedo.vn nhé!"'
+        description: "Mô tả nhu cầu thuê"
+        comment: "Bình luận"
+        place_btn: "Mời bạn nhập nội dung đánh giá bình luận..."
+        btn_text: "Gửi xác nhận"
   layouts:
     footer:
       slogan: "Save Money, Earn Money, Be Handsome"
