@@ -1629,7 +1629,7 @@ a:hover {
 }
 
 .phone-info i.fa-close {
-  color: #EC971F !important;
+  color: $orange_hov !important;
   cursor: pointer;
   position: absolute;
   right: 3px;
@@ -2105,4 +2105,214 @@ a:hover {
 .media-body, .media-left, .media-right {
   display: table-cell;
   vertical-align: top;
+}
+
+//show product in category
+
+.sb-h5 {
+  background: url("news.png") no-repeat 8px;
+  background-color: $sh-b5;
+  margin: 0;
+  padding-bottom: 2px;
+}
+
+.sb-h5 p {
+  margin-bottom: 0;
+  margin-left: 30px;
+  background: $white;
+  padding: 5px;
+}
+
+.bot-sb {
+  border: 1px solid$white_li;
+  padding: 15px 10px;
+  margin-bottom: 10px;
+}
+
+.bot-sb a {
+  color: $orange_light;
+}
+
+.bot-sb img {
+  width: 100%;
+  margin-bottom: 10px;
+  max-height: 180px;
+  height: auto;
+}
+
+.bot-sb ul {
+  margin: 10px 0 0 13px;
+}
+
+.bot-sb li {
+  padding-top: 5px;
+  list-style-image: url("list-s.png");
+}
+
+.bot-sb li a {
+  color: $lease_box_a;
+  padding: 5px 10px 5px 0;
+}
+
+.bot-sb li:hover {
+  background: $sub_li;
+}
+
+.product .tabpanel {
+  position: relative;
+}
+
+.product .tabpanel {
+  padding-bottom: 15px;
+}
+
+.tabpanel .nav-tabs > li a {
+  border: none;
+  border-bottom: 2px solid transparent;
+}
+
+.tabpanel .nav-tabs > li.active a,
+.tabpanel .nav-tabs > li.active a:focus,
+.tabpanel .nav-tabs > li.active a:hover {
+  border: none;
+  border-bottom: 2px solid $blue_lighter;
+}
+
+.tabpanel .nav-tabs a {
+  color: $lease_box_a;
+  text-transform: uppercase;
+  margin-right: 0;
+}
+
+.nav-tabs .active a {
+  color: $blue_lighter !important;
+}
+
+.nav-tabs > li > a {
+  border-radius: 0;
+}
+
+.tab-content {
+  margin-top: 10px;
+}
+
+.tab-content .row {
+  margin-left: 0;
+  margin-right: 0;
+  margin-left: 4px;
+  margin-right: -10px;
+}
+
+.product-row {
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid transparent;
+  margin-left: -4px;
+  float: none;
+  padding-left: 0;
+}
+
+.thumbnail {
+  position: relative;
+}
+
+.item {
+  border-radius: 0;
+  border: none;
+  padding: 11px 0 0;
+  text-align: center;
+  border: 1px solid$white;
+  margin-bottom: 0;
+}
+
+.thumbnail .fa-heart,
+.thumbnail .fa-heart-o {
+  position: absolute;
+  top: 0;
+  right: -11px;
+  color: $orange_hov;
+  font-size: 23px;
+}
+
+.product-row .div-img {
+  text-align: left;
+}
+
+.product-row .div-img img {
+  width: 100%;
+  width: 180px;
+  height: 180px;
+}
+
+.thumbnail a > img {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.item .caption {
+  padding: 9px 0;
+}
+
+.view {
+  text-align: left !important;
+}
+
+.view i {
+  color: $back_primary;
+}
+
+.item-name.over-dot {
+  height: 35px;
+  -webkit-line-clamp: 2;
+  -moz-line-clamp: 2;
+  -moz-line-clamp: 2;
+}
+
+.over-dot {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  -moz-line-clamp: 1;
+  -moz-box-orient: vertical;
+  -moz-line-clamp: 1;
+  -moz-box-orient: vertical;
+  text-overflow: ellipsis;
+  max-height: 18px;
+  height: 18px;
+  overflow: hidden;
+  position: relative;
+}
+
+.item-name {
+  text-align: left;
+  height: 35px;
+  margin-bottom: 2px;
+  text-transform: initial;
+  font-size: 14px;
+  line-height: 1.22;
+}
+
+.item .caption a {
+  color: $lease_box_a !important;
+}
+
+.item .caption p {
+  text-align: left;
+}
+
+.item-price {
+  margin-bottom: 3px;
+}
+
+.item-price .val-price {
+  color: $price_color;
+  font-size: 14px;
+}
+
+.div-dat {
+  margin-bottom: 2px;
+}
+
+.item-address i {
+  color: $price_color;
 }

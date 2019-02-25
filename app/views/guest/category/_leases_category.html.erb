@@ -1,0 +1,37 @@
+<div class="product-row col-sm-4 col-md-3 col-lg-3">
+  <div class="thumbnail item">
+    <i class="fa fa-heart-o fa-2x heart-wish"></i>
+    <div class="div-img">
+      <%= link_to guest_news_lease_path(s), title: s.product_name do %>
+      <%= image_tag(s.image.main_photo.url, alt: s.product_name) %>
+      <% end %>
+    </div>
+    <div class="caption">
+      <div class="view">
+        <i class="fa fa-eye"></i>
+        <span>
+          (<%= s.views %>)
+        </span>
+      </div>
+      <div class="item-name product-name over-dot">
+        <%= link_to guest_news_lease_path(s), title: s.product_name do %>
+        <%= t ".lease" %> <%= s.product_name %>
+        <% end %>
+      </div>
+      <p class="item-price over-dot">
+        <span class="val-price">
+          <%= s.price_value %>
+          <span class="unit"><%= format_price(s.price_type) %></span>
+        </span>
+      </p>
+      <p class="div-dat over-dot">
+        <span class="sp-dat"><%= t ".deposit" %></span>
+        <span class="dat-money"><%= s.deposit_price %> đ</span>
+      </p>
+      <p class="item-address over-dot">
+        <i class="fa fa-map-marker"></i>
+        <%= s.place.address %>
+      </p>
+    </div>
+  </div>
+</div>

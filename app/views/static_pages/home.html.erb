@@ -48,7 +48,7 @@
       <ul>
         <% @category.each do |c| %>
         <li>
-          <%= link_to "#" do %>
+          <%= link_to guest_category_path(c) do %>
             <center>
               <%= image_tag(c.icon, alt:"") %>
               <p><%= c.name %></p>
@@ -76,12 +76,12 @@
             <div class="owl-item cloned">
               <div class="item-media">
                 <div class="media">
-                  <%= link_to "#", class:"pull-left" do %>
+                  <%= link_to guest_news_lease_path(h), class:"pull-left" do %>
                     <%= image_tag(h.image.main_photo.url, class:"media-object", alt: h.product_name) %>
                   <% end %>
                   <div class="media-body">
                     <p class="title">
-                      <%= link_to "#" do %>
+                      <%= link_to guest_news_lease_path(h) do %>
                         <%= t ".lease" %> <%= h.product_name %>
                       <% end %>
                     </p>

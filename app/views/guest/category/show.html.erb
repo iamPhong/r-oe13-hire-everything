@@ -1,0 +1,72 @@
+<div id="product" class="post-lease-page">
+  <div class="container">
+    <div class="row cate-crumb">
+      <div class="col-sm-3 col-md-3 col-lg-3 sidebar">
+        <%= render "shared/iwant" %>
+      </div>
+      <div class="col-sm-9 col-md-9 col-lg-9 post post-hire">
+        <ul class="tit-pro">
+          <li class="btn-home">
+            <%= link_to root_path do %>
+            <%= image_tag("home.png") %>
+            <% end %>
+          </li>
+          <li class="arrow">
+            <i class="fa fa-angle-right"></i>
+          </li>
+          <li>
+            <%= link_to @category.name, guest_category_path(@category) %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3 col-md-3 col-lg-3 left-cates">
+        <h5 class="sb-h5 hidden-xs">
+          <p><%= t ".news" %></p>
+        </h5>
+        <div class="bot-sb hidden-xs">
+          <%= link_to "#" do %>
+          <%= image_tag("news_test.jpg", alt:"Thuê đồ dùng khi cần - Xu hướng tất yếu của xã hội văn minh") %>
+          <p>Thuê đồ dùng khi cần - Xu hướng tất yếu của xã hội văn minh</p>
+          <% end %>
+          <ul>
+            <li>
+              <%= link_to "#" do %>
+              Ký ức trong tôi là: Cuộc thi vẽ về "Ước mơ của em"
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-9 col-md-9 col-lg-9 product cfi-receive-product">
+        <div class="tabpanel" role="tabpanel">
+          <ul class="nav nav-tabs cfi-parent-a" role="tablist">
+            <li class="tab-new active" role="presentation">
+              <%= link_to t(".news_update"), "#" %>
+            </li>
+            <li class="tab-price" role="presentation">
+              <%= link_to t(".cheap"), "#" %>
+            </li>
+            <li class="tab-buy" role="presentation">
+              <%= link_to t(".can_sell"), "#" %>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div class="row tab-pane active" id="newest" role="tabpanel">
+              <% unless @show_category.present? %>
+              <div class="text-center">
+                <h5><%= t ".no_product" %></h5>
+              </div>
+              <% end %>
+              <%= render partial: "guest/category/leases_category", collection: @show_category, as: :s %>
+            </div>
+            <div class="text-center" id="paginator">
+              <%= paginate @show_category, theme: "twitter-bootstrap-3" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
