@@ -4,7 +4,6 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :firstname
       t.string :lastname
       t.string :birthday
-      t.boolean :sex
       t.string :address
       t.string :phone_number
       t.string :facebook
