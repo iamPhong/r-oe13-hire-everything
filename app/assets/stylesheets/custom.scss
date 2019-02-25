@@ -13,6 +13,48 @@ body {
   color: $black;
   font-size: 13px;
 }
+
+//FLASH
+
+.messages-field {
+  padding-top: 15px;
+  visibility: visible;
+  position: absolute;
+  z-index: 999999;
+}
+
+.alert-error {
+  background-color: $alert-red-back;
+  border-color: $alert-red-bor;
+  color: $alert-red-text;
+  text-align: left;
+}
+
+.alert-alert {
+  background-color: $alert-red-back;
+  border-color: $alert-red-bor;
+  color: $alert-red-text;
+  text-align: left;
+}
+
+.alert-success {
+  background-color: $alert-green-back;
+  border-color: $alert-green-bor;
+  color: $alert-green-text;
+  text-align: left;
+}
+
+.alert-notice {
+  background-color: $alert-green-back;
+  border-color: $alert-green-bor;
+  color: $alert-green-text;
+  text-align: left;
+}
+
+.messages-field>.alert>ul>li {
+  list-style: none;
+}
+
 // HEADER
 //top-header
 
@@ -532,4 +574,60 @@ footer .logo {
 
 .pad-l-0 {
   padding-left: 0 !important;
+}
+
+//LOGIN PAGES
+
+.auth-page {
+    margin-bottom: 50px;
+}
+
+.auth-page .form-horizontal {
+    max-width: 430px;
+    margin: 0 auto;
+}
+
+.mar-bt-20 {
+  margin-bottom: 20px !important;
+}
+.mar-t-0 {
+  margin-top: 0 !important;
+}
+
+.form-control {
+  border: 1px solid $white_form;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.auth-page a {
+  color: $blue_lighter;
+}
+
+.auth-page a.btn {
+  color: $btn-a;
+}
+
+.social-login .div-line {
+  text-align: center;
+  margin-top: -23px;
+  margin-bottom: 17px;
+}
+
+.social-login .txt-line {
+  background-color: $white;
+  display: inline-block;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: $text_login;
+}
+
+.btn-group i {
+  margin-right: 5px;
+}
+
+.have-account {
+  margin-bottom: 20px;
+  padding-top: 5px;
 }

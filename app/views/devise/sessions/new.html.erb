@@ -1,0 +1,51 @@
+<div class="container auth-page register">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class:"form-horizontal cfi-auth-frm"}) do |f| %>
+    <div class="form-group">
+      <h2 class="text-center mar-t-0 mar-bt-20"><%= t(".sign_in") %></h2>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-12">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control valid", required:"required", placeholder:t(".email_addr"), aria:{:required=>"true", invalid:"false"} %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-12">
+        <%= f.password_field :password, autocomplete: "current-password", class:"form-control valid", required:"required", placeholder:t(".password"), aria:{:required=>"true", invalid:"false"} %>
+      </div>
+    </div>
+    <% if devise_mapping.rememberable? -%>
+      <div class="form-group" style="margin-top: -6px">
+        <div class="col-sm-12">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      </div>
+    <% end -%>
+    <div class="form-group">
+      <div class="col-sm-12">
+        <%= f.submit t(".sign_in"), class:"btn btn-success btn-group-justified" %>
+      </div>
+    </div>
+    <div class="form-group social-login">
+      <div class="col-sm-12">
+        <hr>
+        <div class="div-line">
+          <span class="txt-line"><%= t ".login_with" %></span>
+        </div>
+        <div class="btn-group btn-group-md btn-group-justified" role="group" aria-label="...">
+          <%= link_to "#", class:"btn btn-primary" do %>
+            <i class="fa fa-facebook-square"></i>Facebook
+          <% end %>
+          <%= link_to "#", class:"btn btn-info" do %>
+            <i class="fa fa-twitter-square"></i>Twitter
+          <% end %>
+          <%= link_to "#", class:"btn btn-danger" do %>
+            <i class="fa fa-google-plus-square"></i>Gmail
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <%= render "devise/shared/links" %>
+  <% end %>
+</div>

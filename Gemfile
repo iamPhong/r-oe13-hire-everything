@@ -16,6 +16,11 @@ gem "rails-i18n"
 gem "bootstrap-sass"
 gem "jquery-rails"
 gem "font-awesome-rails"
+gem "devise"
+gem "devise-i18n"
+gem "carrierwave", "~> 1.3.1"
+gem "mini_magick", "~> 4.7.0"
+gem "config", "~> 1.7.1"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
