@@ -1,4 +1,4 @@
-<%= form_for [:guest,@lease], html:{multipart: true, class:"form-horizontal cfi-create-lease", id:"form-post"} do |f| %>
+<%= form_for [:guest,@lease], url: yield(:action_path), html:{multipart: true, class:"form-horizontal cfi-create-lease", id:"form-post"} do |f| %>
 <%= f.hidden_field :user_id, value: current_user.id %>
 <div class="col-sm-3 sidebar">
   <div class="row">
@@ -6,7 +6,11 @@
       <%= f.fields_for :image do |p| %>
       <li class="row-img ">
         <span class="btn btn-file">
-          <%= image_tag("camera.png", id:"main_img")%>
+          <% if @lease.image.main_photo? %>
+            <%= image_tag(@lease.image.main_photo.url, id:"main_img")%>
+          <% else %>
+            <%= image_tag("camera.png", id:"main_img")%>
+          <% end %>
           <%= p.file_field :main_photo, class:"cfi-common-upload upload-main-img" %>
           <p class="txt-desc">
             <%= t ".main_picture" %>
@@ -16,7 +20,11 @@
       </li>
       <li class="row-img ">
         <span class="btn btn-file">
-          <%= image_tag("camera.png", id:"sub_img")%>
+          <% if @lease.image.sub_photo? %>
+            <%= image_tag(@lease.image.sub_photo.url, id:"sub_img")%>
+          <% else %>
+            <%= image_tag("camera.png", id:"sub_img")%>
+          <% end %>
           <%= p.file_field :sub_photo, class:"cfi-common-upload upload-sub-img" %>
           <p class="txt-desc"><%= t ".sub_picture" %></p>
         </span>
@@ -41,7 +49,16 @@
         <span>(*)</span>
       </label>
       <div class="col-sm-9">
-        <%= f.collection_select :category_id, @category || [], :id, :name, {include_blank:t(".select_type_product")}, {class:"form-control field-require", required:"required"} %>
+        <select class="form-control field-require" required="required" name="news_lease[category_id]">
+          <% if @lease.category_id? %>
+            <option value="<%= @lease.category_id %>"><%= @lease.category.name %></option>
+          <% else %>
+            <option value="" selected="selected"><%= t ".choose_category" %></option>
+          <% end %>
+          <% @category.each do |c| %>
+            <option value="<%= c.id %>"><%= c.name %></option>
+          <% end %>
+        </select>
       </div>
     </div>
 
@@ -61,7 +78,7 @@
         <div class="input-group">
           <%= f.text_field :price_value, class:"form-control field-require" %>
           <div class="input-group-btn">
-            <button type="button" class="btn btn-primary dropdown-toggle btn-select-type-price" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">/ngày
+            <button type="button" class="btn btn-primary dropdown-toggle btn-select-type-price" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= format_price(@lease.price_type) %>
               <span class="caret"></span></button>
             <ul class="dropdown-menu dropdown-menu-right list-type-price ">
               <li class="common">
@@ -110,73 +127,78 @@
           <%= t ".help_place_2" %>
         </div>
         <div>
-          <%= o.text_field :address, id:"address", class:"form-control mar-bt-5 cfi-road", placeholder:t(".place_holder"), autocomplete:"off" %>
+          <%= o.text_field :address, id:"address", class:"form-control mar-bt-5 cfi-road", placeholder:t(".place_holder"), autocomplete:"off", required:"required" %>
         </div>
         <div></div>
         <div id="lease-map" class="" style="height: 300px; position: relative; overflow: hidden;"></div>
-        <%= o.hidden_field :lat, value:"21.027451", id:"lat" %>
-        <%= o.hidden_field :lng, value:"105.834169", id:"lng" %>
+        <% if @lease.place.present? %>
+          <%= o.hidden_field :lat, value:@lease.place.lat, id:"lat" %>
+          <%= o.hidden_field :lng, value:@lease.place.lng, id:"lng" %>
+        <% else %>
+          <%= o.hidden_field :lat, value:Settings.lat_default, id:"lat" %>
+          <%= o.hidden_field :lng, value:Settings.lng_default, id:"lng" %>
+        <% end %>
+        </div>
+      <% end %>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-3"><%= t ".description" %></label>
+      <div class="col-sm-9">
+        <%= f.text_area :description, class:"form-control" %>
       </div>
-    <% end %>
-  </div>
-  <div class="form-group">
-    <label class="control-label col-sm-3"><%= t ".description" %></label>
-    <div class="col-sm-9">
-      <%= f.text_area :description, class:"form-control" %>
     </div>
-  </div>
-  <div class="form-group cfi-hidecate-1">
-    <label class="control-label col-sm-3">
-      <%= t ".cansell" %>
-      <span id="label-price_buy"></span>
-    </label>
-    <div class="col-sm-9 form-sale">
-      <input type="checkbox" name="" value="" id="cb-buy">
-      <%= f.text_field :sell, id:"tb-buy", disabled:"", style:"width: 88%" %>
+    <div class="form-group cfi-hidecate-1">
+      <label class="control-label col-sm-3">
+        <%= t ".cansell" %>
+        <span id="label-price_buy"></span>
+      </label>
+      <div class="col-sm-9 form-sale">
+        <input type="checkbox" name="" value="" id="cb-buy">
+        <%= f.text_field :sell, id:"tb-buy", disabled:"", style:"width: 88%" %>
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label class="control-label col-sm-3">
-      <%= t ".keysearch" %>
-    </label>
-    <div class="col-sm-9">
-      <%= f.text_field :key_search, class:"form-control field-require", style:"width: 100%", value:"", placeholder:t(".example_key") %>
-      <p class="help-block"><%= t ".help_keysearch" %></p>
+    <div class="form-group">
+      <label class="control-label col-sm-3">
+        <%= t ".keysearch" %>
+      </label>
+      <div class="col-sm-9">
+        <%= f.text_field :key_search, class:"form-control field-require", style:"width: 100%", placeholder:t(".example_key") %>
+        <p class="help-block"><%= t ".help_keysearch" %></p>
+      </div>
     </div>
-  </div>
-  <h4 class="tit-border">
-    <span>
-      <%= t ".info_owner_prod" %>
-      <p></p>
-    </span>
-  </h4>
-  <div class="form-group">
-    <label class="control-label col-sm-3">
-      <%= t ".name" %>
-      <span>(*)</span>
-    </label>
-    <div class="col-sm-9">
-      <%= f.text_field :lease_name, class:"form-control field-require" %>
+    <h4 class="tit-border">
+      <span>
+        <%= t ".info_owner_prod" %>
+        <p></p>
+      </span>
+    </h4>
+    <div class="form-group">
+      <label class="control-label col-sm-3">
+        <%= t ".name" %>
+        <span>(*)</span>
+      </label>
+      <div class="col-sm-9">
+        <%= f.text_field :lease_name, class:"form-control field-require" %>
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label class="control-label col-sm-3">
-      <%= t ".phone_number" %>
-      <span>(*)</span>
-    </label>
-    <div class="col-sm-9">
-      <%= f.text_field :lease_phone_number, class:"form-control field-require", style:"width: 100%" %>
-      <p class="help-block"><%= t ".example_phone" %></p>
+    <div class="form-group">
+      <label class="control-label col-sm-3">
+        <%= t ".phone_number" %>
+        <span>(*)</span>
+      </label>
+      <div class="col-sm-9">
+        <%= f.text_field :lease_phone_number, class:"form-control field-require", style:"width: 100%" %>
+        <p class="help-block"><%= t ".example_phone" %></p>
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-3"></div>
-    <div class="col-sm-9 form-btn">
-      <button class="btn btn-default btn-review cfi-btn-review clickable">
-        <%= t ".btn_post" %>
-      </button>
+    <div class="form-group">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-9 form-btn">
+        <button class="btn btn-default btn-review cfi-btn-review clickable">
+          <%= yield(:btn_text) %>
+        </button>
+      </div>
     </div>
-  </div>
   </div>
   <div class="col-md-4 col-lg-4 trade hidden-xs hidden-sm pad-r-0">
     <h4><%= t ".notice_title" %></h4>
