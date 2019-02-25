@@ -1,6 +1,6 @@
 class Guest::NewsLeasesController < ApplicationController
   before_action :authenticate_user!, except: :show
-  before_action :set_lease, except: %i(myleases new create search)
+  before_action :set_lease, except: %i(myleases new create search tag)
   before_action :correct_user, only: %i(edit destroy)
   before_action :list_category, only: %i(new edit search)
   impressionist actions: [:show], unique: [:session_hash]
@@ -60,6 +60,12 @@ class Guest::NewsLeasesController < ApplicationController
   def search
     @key_search = params[:q][:product_name]
     @q = NewsLease.ransack(product_name_cont: @key_search)
+    @result = @q.result(distinct: true).where(status: true).page(params[:page]).per(Settings.page_lease_category)
+  end
+
+  def tag
+    @key_tag = params[:tag]
+    @q = NewsLease.ransack(key_search_eq: @key_tag)
     @result = @q.result(distinct: true).where(status: true).page(params[:page]).per(Settings.page_lease_category)
   end
 

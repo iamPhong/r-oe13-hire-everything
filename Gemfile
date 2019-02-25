@@ -32,6 +32,7 @@ gem "owlcarousel-rails"
 gem "impressionist"
 gem "ratyrate", :github => "wazery/ratyrate"
 gem "ransack"
+gem "jquery-turbolinks"
 
 
 group :development, :test do

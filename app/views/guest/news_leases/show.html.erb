@@ -81,6 +81,14 @@
               <span class="dat-pp"><%= @lease.deposit_paper if @lease.deposit_paper? %></span>
             </span>
           </p>
+          <% if @lease.sell != nil %>
+          <p class="dat">
+            <span class="tit"><%= t ".can_sell" %> </span>
+            <span>
+              <span class="dat-money"><%= @lease.sell %> đ</span>;
+            </span>
+          </p>
+          <% end %>
           <p class="address">
             <span class="tit"><%= t ".address" %></span>
             <%= @lease.place.address %>
@@ -149,7 +157,7 @@
         </div>
         <div class="div-tag mar-t-15">
           <span class="tag-tit"><%= t ".tag" %> </span>
-          <%= link_to "#", class:"label lbl-tag" do %>
+          <%= link_to tag_guest_news_leases_path(:tag => @lease.key_search), class:"label lbl-tag" do %>
             <%= @lease.key_search %>
           <% end %>
         </div>
