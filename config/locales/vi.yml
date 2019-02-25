@@ -60,6 +60,7 @@ vi:
         edit_news_lease: "Cập nhật tin đăng"
         list_lease: "Danh sách cho thuê"
       show:
+        core: "điểm"
         views: "Lượt xem"
         list_lease: "Danh sách cho thuê"
         title: "Cho thuê"
@@ -81,6 +82,7 @@ vi:
         place_comment: "Mời bạn nhập nội dung đánh giá bình luận..."
         sent_comment: "Gửi bình luận"
         tag: "Tags:"
+        rate: "lượt đánh giá"
       myleases:
         list_lease: "Danh sách cho thuê"
         stt: "Stt"

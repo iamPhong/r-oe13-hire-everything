@@ -2259,6 +2259,7 @@ a:hover {
 
 .view i {
   color: $back_primary;
+  font-size: 16px;
 }
 
 .item-name.over-dot {
@@ -2315,4 +2316,18 @@ a:hover {
 
 .item-address i {
   color: $price_color;
+}
+
+.star {
+  float: left;
+}
+
+.rate>span {
+  line-height: 18px !important;
+  float: left;
+  padding-left: 2px;
+}
+
+.h-70 {
+  height: 70px;
 }

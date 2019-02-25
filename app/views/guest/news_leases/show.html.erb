@@ -54,9 +54,17 @@
           <div class="post-tit ">
             <h1 class="tit-seo"><%= t ".title" %> <%= @lease.product_name %></h1>
           </div>
+            <%= rating_for @lease, "quality", stars: 5, disable_after_rate: true %>
+            <span>
+            <% if @lease.average("quality").present? %>
+              (<%= @lease.average("quality").avg %> <%= t ".core" %>/<%= @lease.rates("quality").count %> <%= t ".rate" %>)
+            <% else %>
+              (0 <%= t ".core" %>/<%= @lease.rates("quality").count %> <%= t ".rate" %>)
+            <% end %>
+            </span>
           <p class="views">
             <i>
-              (<%= t ".views" %> <%= @lease.impressionist_count(filter: :session_hash) %>)
+              (<%= t ".views" %> <%= @lease.impressionist_count(:filter=>:session_hash) %>)
             </i>
           </p>
           <p class="price">

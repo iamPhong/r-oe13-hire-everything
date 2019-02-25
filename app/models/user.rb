@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :notifications
   mount_uploader :avatar, AvatarUploader
   validate  :avatar_size
+  ratyrate_rater
 
   private
   def avatar_size

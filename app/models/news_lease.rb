@@ -13,4 +13,5 @@ class NewsLease < ApplicationRecord
   scope :approved, -> (status){where status: status}
   scope :order_desc_views, -> {order(views: :desc)}
   is_impressionable
+  ratyrate_rateable "quality"
 end

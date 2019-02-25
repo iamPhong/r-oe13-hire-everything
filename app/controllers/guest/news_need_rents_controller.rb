@@ -1,5 +1,5 @@
 class Guest::NewsNeedRentsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, expect: :show
   before_action :set_rent, except: %i(myrents new create)
   before_action :list_category, only: %i(edit new)
   before_action :correct_user, only: %i(edit update destroy)

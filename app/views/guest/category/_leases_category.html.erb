@@ -7,6 +7,13 @@
       <% end %>
     </div>
     <div class="caption">
+      <div class="rate">
+        <%= rating_for s, "quality", stars: 5, disable_after_rate: true %>
+        <span>
+          (<%= s.rates("quality").count %>)
+        </span>
+      </div>
+      <br>
       <div class="view">
         <i class="fa fa-eye"></i>
         <span>
