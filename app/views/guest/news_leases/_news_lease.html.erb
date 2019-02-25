@@ -1,0 +1,39 @@
+<tr id="news-lease-<%= lease.id %>">
+  <td>
+    <%= create_index params[:page], lease_counter, Settings.new_lease_page %>
+  </td>
+  <td class="img-col">
+    <%= image_tag(lease.image.main_photo.url, alt:"", style:"height: 70px;" ) %>
+  </td>
+  <td class="td-check">
+    <a href="https://thuedo.vn/xe-co">
+      <%= lease.category.name %>
+    </a>
+    <% if lease.status == true %>
+      <i class="fa fa-check" data-toggle="tooltip" data-placement="top" title="" data-original-title="Tin đã được duyệt"></i>
+    <% else %>
+      <i class="fa fa-spinner fa-spin" data-toggle="tooltip" data-placement="top" title="" data-original-title="Đang chờ phê duyệt"></i>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to guest_news_lease_path(lease) do %>
+      <%= t ".lease" %> <%= lease.product_name %>
+    <% end %>
+  </td>
+  <td class="action-col col-left">
+    <div>
+      <%= link_to edit_guest_news_lease_path(lease), class:"btn btn-link pad-lr-0 pad-bt-1 edit-post" do %>
+        <i class="fa fa-pencil-square-o"></i>
+        <%= t ".edit" %>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to guest_news_lease_path(lease), method: :delete, data: {confirm: "Are you sure?", remote: true} do %>
+        <button class="btn btn-link pad-lr-0 pad-bt-1 cfi-remove-post">
+          <i class="glyphicon glyphicon-trash"></i>
+          <%= t ".delete" %>
+        </button>
+      <% end %>
+    </div>
+  </td>
+</tr>

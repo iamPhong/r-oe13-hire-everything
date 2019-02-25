@@ -1,0 +1,43 @@
+<%= javascript_include_tag "guest/news_leases.js" %>
+<div id="product" class="container accout-page">
+  <div class="row">
+    <%= render "shared/sidebar" %>
+    <div class="col-sm-9 col-md-9 col-lg-9 list-lease">
+      <div class="cate-crumb">
+        <ul class="tit-pro">
+          <li class="btn-home">
+            <%= link_to root_path do %>
+            <%= image_tag("home.png") %>
+          <% end %>
+          <li class="arrow">
+            <i class="fa fa-angle-right"></i>
+          </li>
+          <li>
+            <span><%= t ".list_lease" %></span>
+          </li>
+        </ul>
+      </div>
+      <div id="cfi-product-manage">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th><%= t ".stt" %></th>
+                <th class="img-col"><%= t ".image" %></th>
+                <th><%= t ".name_product" %></th>
+                <th><%= t ".info" %></th>
+                <th class="action-col"><%= t ".setting" %></th>
+              </tr>
+            </thead>
+            <tbody id="myleases">
+              <%= render partial: "news_lease", collection: @leases, as: :lease %>
+            </tbody>
+          </table>
+          <div class="text-center" id="paginator">
+            <%= paginate @leases, remote: true, theme: "twitter-bootstrap-3" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

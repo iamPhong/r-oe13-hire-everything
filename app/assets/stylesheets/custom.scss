@@ -1432,3 +1432,100 @@ input[type=text] {
   height: 300px !important;
   margin-left: 23px !important;
 }
+
+//MY LEASES
+
+.list-lease table thead {
+  background: #4286F5;
+}
+
+.list-lease table thead th {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: center;
+  border-right: 1px solid#fff;
+  border-top: 5px solid#4286F5 !important;
+  border-bottom: 5px solid#4286F5;
+  padding: 8px 3px;
+}
+
+.list-lease table thead th:last-child {
+  border-right: 1px solid#4286F5;
+}
+
+.list-lease table tr td {
+  vertical-align: middle;
+  border: 1px solid#ddd;
+  font-size: 14px;
+  text-align: center;
+}
+
+.list-lease table tr td.img-col {
+  position: relative;
+}
+
+.list-lease .td-check {
+  position: relative;
+}
+
+.list-lease td .btn-link,
+.list-lease td a {
+  color: #424242;
+}
+
+.list-lease .td-check i {
+  position: absolute;
+  bottom: 5px;
+  font-size: 20px;
+  right: 5px;
+  color: #4285F6;
+  cursor: pointer;
+  top: inherit;
+}
+
+.list-lease table tr td.col-left {
+  text-align: left;
+}
+
+.pad-lr-0 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.pad-bt-1 {
+  padding-top: 1px !important;
+  padding-bottom: 1px !important;
+}
+
+.action-col .btn i,
+.list-lease .ul3 li a i,
+.list-lease .ul3 li button i {
+  padding-right: 5px;
+  color: #F4A338;
+  font-size: 16px;
+}
+
+.cfi-remove-post i {
+  color: red !important;
+}
+
+.edit-post i {
+  color: green !important;
+}
+
+a:active,
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+
+.action-col .btn:focus,
+.action-col .btn:hover {
+  text-decoration: none;
+  opacity: 0.78;
+}
+
+.fa-check {
+  color: green !important;
+}

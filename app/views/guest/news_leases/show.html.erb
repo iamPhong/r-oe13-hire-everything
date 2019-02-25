@@ -1,3 +1,4 @@
+<%= javascript_include_tag "guest/news_leases.js" %>
 <div id="product" class="post-lease-page">
   <div class="container">
     <div class="row cate-crumb">
@@ -101,7 +102,7 @@
     </div>
     <div class="row comment-product">
       <div class="col-sm-4 col-md-4 col-lg-4 maps mar-bt-20">
-        <% if @lease.status == 1 %>
+        <% if @lease.status == true %>
           <span class="verified"><%= image_tag("check2.png") %><%= t ".verified" %></span>
         <% end %>
         <div class="google-maps" id="lease-map" style="position: relative; overflow: hidden;">

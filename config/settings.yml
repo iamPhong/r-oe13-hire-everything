@@ -2,3 +2,4 @@ avatar_size_max: 5
 photo_size_max: 8
 lat_default: 21.027451
 lng_default: 105.834169
+new_lease_page: 8
