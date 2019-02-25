@@ -1210,3 +1210,225 @@ input[type=text] {
 .clickable {
   cursor: pointer;
 }
+
+//DETALS LEASE
+
+.left-detail {
+  position: relative;
+  padding: 20px 20px 20px 0;
+}
+
+.left-detail .heart {
+  position: absolute;
+  top: 6px;
+  right: 13px;
+}
+
+.wishlist-control i {
+  color: $orange_light;
+}
+
+.left-detail .img-big.sp {
+  display: none;
+}
+
+.left-detail .img-big {
+  float: right;
+}
+
+.left-detail .img-big {
+  max-height: 360px;
+  max-width: 254px;
+}
+
+.sub-item {
+  position: absolute;
+  top: 20%;
+}
+
+.sub-item li.active {
+  border-color: $sub_orange;
+}
+
+.sub-item li {
+  list-style: none;
+  border: 3px solid $sub_li;
+  margin-bottom: 4px;
+}
+
+#list-img-sub li img {
+  width: 58px;
+  height: 58px;
+}
+
+.sub-item li img {
+  cursor: pointer;
+}
+
+.right-detail {
+  border-left: 3px solid $blue_lighter;
+}
+
+.right-detail .triangle {
+  position: absolute;
+  left: -10px;
+  top: 48%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 7.5px 7px 7.5px 0;
+  border-color: transparent $blue_lighter transparent transparent;
+}
+
+.right-detail * {
+  text-align: left;
+}
+
+.right-detail .post-tit,
+.right-detail .post-tit .tit-seo,
+.right-detail h3 {
+  text-transform: uppercase;
+  color: $right_detail_blu;
+  margin-top: 0;
+  font-size: 21px;
+  line-height: 1.38;
+}
+
+.right-detail .post-tit .tit-seo {
+  display: inline;
+}
+
+.right-detail p .tit {
+  font-weight: bold;
+}
+
+.right-detail .price .txt {
+  color: $price_color;
+  font-size: 20px;
+}
+
+.mobile a {
+  font-size: 19px;
+  color: $price_color;
+}
+
+.a-color {
+  color: $blue_lighter;
+  cursor: pointer;
+}
+
+.comment-product {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.mar-bt-20 {
+  margin-bottom: 20px !important;
+}
+
+.maps span {
+  font-style: italic;
+  font-size: 13px;
+}
+
+.maps span img {
+  margin: 0 5px 0 0;
+  padding: 3px 7px;
+  border: 1px solid $white_li;
+}
+
+.google-maps {
+  position: relative;
+  padding-bottom: 75%;
+  height: 0;
+  overflow: hidden;
+  margin-top: 13px;
+}
+
+.map-detail {
+  width: 100%;
+  height: 270px;
+}
+
+.comment-detail {
+  padding-left: 3px;
+}
+
+.desc {
+  margin-bottom: 28px;
+}
+
+.comment-detail .post-desc,
+.comment-detail h4 {
+  text-align: left;
+  font-size: 15px;
+  margin: 0 0 5px;
+}
+
+.desc .post-desc,
+.desc h4 {
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+.desc .line-color {
+  width: 50%;
+  height: 3px;
+  background: $right_detail_blu;
+}
+
+.desc span {
+  left: inherit;
+  width: 12.3%;
+  height: 3px;
+  background: $orange_light;
+  position: absolute;
+}
+
+.cfi-readmore[data-readmore] {
+  transition: height 100ms;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+}
+
+.desc .desc-content {
+  padding: 7px 0;
+}
+
+#post-comment {
+  margin-top: 10px;
+}
+
+.comment-detail .count-com {
+  font-style: italic;
+}
+
+.mar-t-15 {
+  margin-top: 15px !important;
+}
+
+.div-tag .lbl-tag {
+  background-color: #7d7e80;
+  border-radius: 0;
+  font-size: 90%;
+  margin-right: 2px;
+  font-weight: normal;
+  padding: 0.3em 6px;
+  margin-bottom: 4px;
+  display: inline-block;
+  line-height: 1.4;
+}
+
+.zoomLens {
+  border: none !important;
+  width: 110px !important;
+  height: 110px !important;
+}
+
+.zoomWindow {
+  border: 1px solid $border_zoom_color !important;
+  width: 340px !important;
+  height: 300px !important;
+  margin-left: 23px !important;
+}

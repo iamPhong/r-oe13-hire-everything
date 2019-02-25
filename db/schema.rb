@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2019_03_01_015144) do
     t.bigint "category_id"
     t.bigint "place_id"
     t.bigint "image_id"
-    t.integer "price_type"
+    t.integer "price_type", default: 0, null: false
     t.integer "price_value"
     t.integer "deposit_price"
     t.string "deposit_paper"

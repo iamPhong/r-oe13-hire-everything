@@ -23,6 +23,8 @@ gem "mini_magick", "~> 4.7.0"
 gem "config", "~> 1.7.1"
 gem "cancancan"
 gem "figaro"
+gem "ckeditor"
+gem "elevatezoom-rails"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
