@@ -1,0 +1,44 @@
+<%= javascript_include_tag "guest/news_need_rents.js" %>
+<%= provide :action_path, guest_news_need_rent_path %>
+<%= provide :btn_text, t(".post_rent_edit") %>
+<div id="product" class="post-lease-page">
+  <div class="container">
+    <div class="row cate-crumb">
+      <div class="col-sm-3 col-md-3 col-lg-3 sidebar">
+        <%= render "shared/iwant" %>
+      </div>
+      <div class="col-sm-9 col-md-9 col-lg-9 post post-hire">
+        <ul class="tit-pro">
+          <li class="btn-home">
+            <%= link_to root_path do %>
+            <%= image_tag("home.png") %>
+          <% end %>
+          </li>
+          <li class="arrow">
+            <i class="fa fa-angle-right"></i>
+          </li>
+          <li>
+            <%= link_to t(".list_rent"),"#" %>
+          </li>
+          <li class="arrow">
+            <i class="fa fa-angle-right"></i>
+          </li>
+          <li>
+            <span><%= t ".post_news_rent" %></span>
+          </li>
+        </ul>
+        <hgroup>
+          <h4>
+            <%= t ".hgroup_1" %>
+            <span>
+              <%= t ".thuedo" %>
+            </span>
+            <%= t ".hgroup_2" %><br>
+            <%= t ".hgroup_3" %>
+          </h4>
+        </hgroup>
+        <%= render "form" %>
+      </div>
+    </div>
+  </div>
+</div>

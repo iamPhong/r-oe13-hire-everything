@@ -99,6 +99,14 @@ vi:
         thuedo: "thuedo.vn"
         hgroup_2: "sẽ giúp bạn tìm thuê được mọi thứ mình cần,"
         hgroup_3: "bạn vui lòng điền các thông tin dưới đây:"
+      edit:
+        post_rent_edit: "Chỉnh sửa"
+        list_rent: "Danh sách cần thuê"
+        post_news_rent: "Chỉnh sửa tin cần thuê"
+        hgroup_1: "Với mong muốn"
+        thuedo: "thuedo.vn"
+        hgroup_2: "sẽ giúp bạn tìm thuê được mọi thứ mình cần,"
+        hgroup_3: "bạn vui lòng điền các thông tin dưới đây:"
   layouts:
     footer:
       slogan: "Save Money, Earn Money, Be Handsome"

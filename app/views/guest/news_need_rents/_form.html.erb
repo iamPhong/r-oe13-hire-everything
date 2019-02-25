@@ -34,7 +34,11 @@
       <ul class="row ul7 lease-upload mar-t-0" style="max-width: 300px">
         <li class="row-img uploaded">
           <span class="btn btn-file">
-            <%= image_tag("camera.png", id:"rent-pic") %>
+            <% if @rent.picture? %>
+              <%= image_tag(@rent.picture.url, id:"rent-pic") %>
+            <% else %>
+              <%= image_tag("camera.png", id:"rent-pic") %>
+            <% end %>
             <%= f.file_field :picture, class: "rent-pic-upload" %>
           </span>
         </li>
