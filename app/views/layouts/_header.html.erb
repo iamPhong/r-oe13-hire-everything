@@ -1,0 +1,203 @@
+<header>
+  <nav class="top">
+    <div class="container">
+      <ul class="nav navbar-nav left-info">
+        <li class="hidden-585">
+          <%= link_to t(".tel_to") do %>
+            <i class="glyphicon glyphicon-phone-alt"></i>
+            <%= t ".phone_number" %>
+          <% end %>
+        </li>
+        <li class="hidden-585">
+          <%= link_to t(".mailto") do %>
+            <i class="glyphicon glyphicon-envelope"></i>
+            <%= t ".gmail" %>
+          <% end %>
+        </li>
+
+        <li class="visible-585">
+          <button class="navbar-toggle dropdown-toggle" data-toggle="dropdown">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li class="getHome active">
+              <%= link_to t(".home"), "#" %>
+            </li>
+            <li class="getGioiThieu">
+              <%= link_to t(".about"), "#" %>
+            </li>
+            <li class="getQuyDinh">
+              <%= link_to t(".policy"), "#" %>
+            </li>
+            <li class="getHoTro">
+              <%= link_to t(".support"), "#" %>
+            </li>
+            <li class="getNews">
+              <%= link_to t(".news"), "#" %>
+            </li>
+            <li class="getLienHe">
+              <a class="cfi-sub-dropdown" href="javascript:"><%= t ".contact" %></a>
+              <ul class="dropdown-menu">
+                <li class="getLienHe">
+                  <%= link_to t(".contact"), "#" %>
+                </li>
+              </ul>
+            </li>
+            <li class="getHopTac">
+              <%= link_to t(".collaborate"), "#" %>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <%= link_to t(".tel_to") do %>
+                <i class="glyphicon glyphicon-phone-alt"></i>
+                <%= t ".phone_number" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to t(".mailto") do %>
+                <i class="glyphicon glyphicon-envelope"></i>
+                <%= t ".gmail" %>
+              <% end %>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right login">
+        <li class="header-favorite cfi-heart">
+          <a class="icon a-tag cfi-show-wishlist" data-href="#">
+            <i class="fa fa-heart">
+              <span class="count-wishlist">
+                2
+              </span>
+            </i>
+          </a>
+          <div aria-labelledby="myModalLabel" class="modal fade wishlist-modal" id="myModal" role="dialog" tabindex="-1">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header wishlist-header">
+                  <span class="a-tag pull-right" data-dismiss="modal">
+                    <i class="fa fa-close"></i>
+                  </span>
+                  <h4 class="modal-title" id="myModalLabel">
+                    <i class="fa fa-calendar"></i>
+                    <%= t ".wishlist" %>
+                  </h4>
+                </div>
+                <div class="modal-body">
+                  <i class="glyphicon glyphicon-repeat glyphicon-loading"></i>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-default" data-dismiss="modal"><%= t ".close" %></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <span class="btn btn-link a-avatar dropdown-toggle" data-toggle="dropdown">
+            <%= image_tag("user_default.png", alt:"", class:"img-avatar") %>
+            <span class="count-notify">5</span>
+          </span>
+          <ul class="dropdown-menu">
+            <li class="text-center">
+              <%= link_to "#" do %>
+                <b><%= t ".test_user" %></b>
+              <% end %>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <%= link_to "#" do %>
+                <%= t ".notification" %>
+                <span class="badge" style="background-color: #4285F6">5</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to t(".list_lease"),"#" %>
+            </li>
+            <li>
+              <%= link_to t(".list_need_hire"),"#" %>
+            </li>
+            <li class="divider"></li>
+            <li class="naptien">
+              <%= link_to t(".pay"),"#" %>
+              <span>0 VNĐ</span>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <%= link_to "#" do %>
+                <i class="fa fa-sign-out"></i>
+                <%= t ".logout" %>
+              <% end %>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="menu">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <%= link_to "#" do %>
+            <%= image_tag("logo.png", alt:"thuedo.vn", class:"for-pc img-responsive") %>
+          <% end %>
+        </div>
+
+        <div class="search-container">
+          <div class="search-child">
+            <ul class="nav navbar-nav menu-hidden main-menu hidden-xs">
+              <li class="getHome active">
+                <%= link_to t(".home"), "#" %>
+              </li>
+              <li class="getGioiThieu">
+                <%= link_to t(".about"), "#" %>
+              </li>
+              <li class="getQuyDinh">
+                <%= link_to t(".policy"), "#" %>
+              </li>
+              <li class="getHoTro">
+                <%= link_to t(".support"), "#" %>
+              </li>
+              <li class="getNews">
+                <%= link_to t(".news"), "#" %>
+              </li>
+              <li class="getLienHe">
+                <%= link_to t(".contact"), "#" %>
+              </li>
+              <li class="getHopTac">
+                <%= link_to t(".collaborate"), "#" %>
+              </li>
+            </ul>
+
+            <div class="post-btn">
+              <div class="post-mobile">
+                <button class="btn pen dropdown-toggle" data-toggle="dropdown">
+                  <span>
+                    <i class="pen-icon"></i><%= t ".post" %></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <%= link_to "#" do %>
+                      <i class="glyphicon glyphicon-plus"></i>
+                      <%= t ".news_hire" %>
+                    <% end %>
+                  </li>
+                  <li class="divider"></li>
+                  <li class="naptien">
+                    <%= link_to "#" do %>
+                      <i class="glyphicon glyphicon-plus"></i>
+                      <%= t ".news_need_hire" %>
+                    <% end %>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>

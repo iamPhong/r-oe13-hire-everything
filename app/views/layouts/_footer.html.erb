@@ -1,0 +1,95 @@
+<footer>
+  <div class="top-ft">
+    <div class="container">
+    <p><%= t ".slogan" %></p>
+    </div>
+  </div>
+  <div class="mid-ft">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-2 col-md-2 col-lg-2 news-feed">
+          <ul>
+            <h3><span><%= t ".info" %></span></h3>
+            <li><%= t ".receive_info" %></li>
+            <li>
+              <div class="has-feedback">
+                <form action="#" class="cfi-newsletter-frm">
+                  <input showerr="email" name="email" class="form-control" placeholder="<%= t(".input_email") %>">
+                  <i class="glyphicon glyphicon-envelope form-control-feedback"></i>
+                </form>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2 col-about">
+          <ul>
+            <h3><span><%= t ".about_web" %></span></h3>
+            <li><%= link_to t(".home"), "#" %></li>
+            <li><%= link_to t(".about"), "#" %></li>
+            <li><%= link_to t(".news"), "#" %></li>
+            <li><%= link_to t(".contact"), "#" %></li>
+          </ul>
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2 pad-l-0 col-hotro">
+          <ul>
+            <h3><span><%= t ".support_guest" %></span></h3>
+            <li><%= link_to t(".tranfer"), "#" %></li>
+            <li><%= link_to t(".guide_1"), "#" %></li>
+            <li><%= link_to t(".guide_2"), "#" %></li>
+            <li><%= link_to t(".guide_3"), "#" %></li>
+            <li><%= link_to t(".guide_4"), "#" %></li>
+            <li><%= link_to t(".faq"), "#" %></li>
+          </ul>
+        </div>
+        <div class="col-sm-3 col-md-3 col-lg-3 pad-r-0 pad-l-0 col-chinhsach">
+          <ul>
+            <h3><span><%= t ".rules_policy" %></span></h3>
+            <li><%= link_to t(".policy_1"), "#" %></li>
+            <li><%= link_to t(".policy_2"), "#" %></li>
+            <li><%= link_to t(".policy_3"), "#" %></li>
+            <li><%= link_to t(".policy_4"), "#" %></li>
+          </ul>
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2 group-social2">
+          <ul>
+            <h3><span><%= t ".link" %></span></h3>
+            <li>
+              <%= link_to "#", target:"blank" do %>
+                <span><i class="fa fa-facebook"></i></span>
+                <%= t ".facebook" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#", target:"blank" do %>
+                <span><i class="fa fa-google"></i></span>
+                <%= t ".google" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#", target:"blank" do %>
+                <span><i class="fa fa-twitter"></i></span>
+                <%= t ".tiwtter" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#", target:"blank" do %>
+                <span><i class="fa fa-youtube-play"></i></span>
+                <%= t ".youtube" %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bot-ft">
+    <div class="container">
+      <div class="row">
+        <div class="left col-sm-5">
+          <i class="logo"></i>
+          <p><%= t ".copyright" %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
