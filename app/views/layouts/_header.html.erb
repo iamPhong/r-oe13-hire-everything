@@ -66,74 +66,93 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right login">
-        <li class="header-favorite cfi-heart">
-          <a class="icon a-tag cfi-show-wishlist" data-href="#">
-            <i class="fa fa-heart">
-              <span class="count-wishlist">
-                2
-              </span>
-            </i>
-          </a>
-          <div aria-labelledby="myModalLabel" class="modal fade wishlist-modal" id="myModal" role="dialog" tabindex="-1">
-            <div class="modal-dialog modal-lg" role="document">
-              <div class="modal-content">
-                <div class="modal-header wishlist-header">
-                  <span class="a-tag pull-right" data-dismiss="modal">
-                    <i class="fa fa-close"></i>
-                  </span>
-                  <h4 class="modal-title" id="myModalLabel">
-                    <i class="fa fa-calendar"></i>
-                    <%= t ".wishlist" %>
-                  </h4>
-                </div>
-                <div class="modal-body">
-                  <i class="glyphicon glyphicon-repeat glyphicon-loading"></i>
-                </div>
-                <div class="modal-footer">
-                  <button class="btn btn-default" data-dismiss="modal"><%= t ".close" %></button>
+        <% if user_signed_in? %>
+          <li class="header-favorite cfi-heart">
+            <a class="icon a-tag cfi-show-wishlist" data-href="#">
+              <i class="fa fa-heart">
+                <span class="count-wishlist">
+                  2
+                </span>
+              </i>
+            </a>
+            <div aria-labelledby="myModalLabel" class="modal fade wishlist-modal" id="myModal" role="dialog" tabindex="-1">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header wishlist-header">
+                    <span class="a-tag pull-right" data-dismiss="modal">
+                      <i class="fa fa-close"></i>
+                    </span>
+                    <h4 class="modal-title" id="myModalLabel">
+                      <i class="fa fa-calendar"></i>
+                      <%= t ".wishlist" %>
+                    </h4>
+                  </div>
+                  <div class="modal-body">
+                    <i class="glyphicon glyphicon-repeat glyphicon-loading"></i>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal"><%= t ".close" %></button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </li>
-        <li>
-          <span class="btn btn-link a-avatar dropdown-toggle" data-toggle="dropdown">
-            <%= image_tag("user_default.png", alt:"", class:"img-avatar") %>
-            <span class="count-notify">5</span>
-          </span>
-          <ul class="dropdown-menu">
-            <li class="text-center">
-              <%= link_to "#" do %>
-                <b><%= t ".test_user" %></b>
+          </li>
+          <li>
+            <span class="btn btn-link a-avatar dropdown-toggle" data-toggle="dropdown">
+              <% if current_user.avatar? %>
+                <%= image_tag(current_user.avatar.url, alt:"", class:"img-avatar") %>
+              <% else %>
+                <%= image_tag("user_default.png", alt:"", class:"img-avatar") %>
               <% end %>
-            </li>
-            <li class="divider"></li>
-            <li>
-              <%= link_to "#" do %>
-                <%= t ".notification" %>
-                <span class="badge" style="background-color: #4285F6">5</span>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to t(".list_lease"),"#" %>
-            </li>
-            <li>
-              <%= link_to t(".list_need_hire"),"#" %>
-            </li>
-            <li class="divider"></li>
-            <li class="naptien">
-              <%= link_to t(".pay"),"#" %>
-              <span>0 VNĐ</span>
-            </li>
-            <li class="divider"></li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-sign-out"></i>
-                <%= t ".logout" %>
-              <% end %>
-            </li>
-          </ul>
-        </li>
+              <span class="count-notify">5</span>
+            </span>
+            <ul class="dropdown-menu">
+              <li class="text-center">
+                <%= link_to "#" do %>
+                  <b><%= current_user.firstname %> <%= current_user.lastname %></b>
+                <% end %>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to "#" do %>
+                  <%= t ".notification" %>
+                  <span class="badge" style="background-color: #4285F6">5</span>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to t(".list_lease"),"#" %>
+              </li>
+              <li>
+                <%= link_to t(".list_need_hire"),"#" %>
+              </li>
+              <li class="divider"></li>
+              <li class="naptien">
+                <%= link_to t(".pay"),"#" %>
+                <span>0 VNĐ</span>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out"></i>
+                  <%= t ".logout" %>
+                <% end %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to new_user_registration_path do %>
+              <i class="fa fa-user-plus"></i>
+              <%= t ".signup" %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_user_session_path do %>
+              <i class="fa fa-sign-in"></i>
+              <%= t ".login" %>
+            <% end %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </nav>

@@ -1,4 +1,5 @@
 vi:
+  file_less_than: "Cần nhỏ hơn 5MB"
   layouts:
     footer:
       slogan: "Save Money, Earn Money, Be Handsome"
@@ -51,6 +52,8 @@ vi:
       list_need_hire: "Danh sách cần thuê"
       pay: "Nạp tiền"
       logout: "Đăng xuất"
+      login: "Đăng nhập"
+      signup: "Đăng kí"
   static_pages:
     home:
       test: "Đây là trang home"

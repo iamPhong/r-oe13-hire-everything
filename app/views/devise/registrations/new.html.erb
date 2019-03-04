@@ -1,0 +1,70 @@
+<div class="container auth-page register">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class:"form-horizontal cfi-auth-frm"}) do |f| %>
+  <%= devise_error_messages! %>
+  <div class="form-group">
+    <div class="col-sm-12 text-center">
+      <h2 class="text-center mar-t-0 mar-bt-20"><%= t('.sign_up') %></h2>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-12">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", required:"required", placeholder:t(".email_addr"), aria:{:required=>"true"} %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-12">
+      <%= f.text_field :firstname, autofocus: true, autocomplete: "firstname", class:"form-control", required:"required", placeholder:t(".firstname"), aria:{:required=>"true"} %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-12">
+      <%= f.text_field :lastname, autofocus: true, autocomplete: "lastname", class:"form-control", required:"required", placeholder:t(".lastname"), aria:{:required=>"true"} %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-12">
+      <%= f.password_field :password, autocomplete: "new-password", class:"form-control", required:"required", placeholder:t(".password"), aria:{:required=>"true"} %>
+    </div>
+  </div>
+  <div class="form-group mar-bt-10">
+    <div class="col-sm-12">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", required:"required", placeholder:t(".confirm_password"), aria:{:required=>"true"} %>
+    </div>
+  </div>
+  <div class="form-group div-term">
+    <div class="col-sm-12" style="font-weight: normal;">
+      <label style="display: block; font-weight: normal">
+        <input type="checkbox" name="is_accept_term" required="" aria-required="true">
+        <%= t ".i_agrre" %>
+        <%= link_to t(".policy"), "#", target:"_blank" %>
+      </label>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-12">
+      <%= f.submit t(".sign_up"), class:"btn btn-success btn-group-justified" %>
+    </div>
+  </div>
+  <div class="form-group social-login">
+    <div class="col-sm-12">
+      <hr>
+      <div class="div-line">
+        <span class="txt-line"><%= t ".login_with" %></span>
+      </div>
+      <div class="btn-group btn-group-md btn-group-justified" role="group" aria-label="...">
+        <%= link_to "#", class:"btn btn-primary" do %>
+          <i class="fa fa-facebook-square"></i>Facebook
+        <% end %>
+        <%= link_to "#", class:"btn btn-info" do %>
+          <i class="fa fa-twitter-square"></i>Twitter
+        <% end %>
+        <%= link_to "#", class:"btn btn-danger" do %>
+          <i class="fa fa-google-plus-square"></i>Gmail
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <%= render "devise/shared/links" %>
+<% end %>
+</div>
