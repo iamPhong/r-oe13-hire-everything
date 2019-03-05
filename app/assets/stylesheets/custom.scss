@@ -13,7 +13,6 @@ body {
   color: $black;
   font-size: 13px;
 }
-
 //FLASH
 
 .messages-field {
@@ -51,10 +50,9 @@ body {
   text-align: left;
 }
 
-.messages-field>.alert>ul>li {
+.messages-field > .alert > ul > li {
   list-style: none;
 }
-
 // HEADER
 //top-header
 
@@ -575,21 +573,21 @@ footer .logo {
 .pad-l-0 {
   padding-left: 0 !important;
 }
-
 //LOGIN PAGES
 
 .auth-page {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .auth-page .form-horizontal {
-    max-width: 430px;
-    margin: 0 auto;
+  max-width: 430px;
+  margin: 0 auto;
 }
 
 .mar-bt-20 {
   margin-bottom: 20px !important;
 }
+
 .mar-t-0 {
   margin-top: 0 !important;
 }
@@ -630,4 +628,303 @@ footer .logo {
 .have-account {
   margin-bottom: 20px;
   padding-top: 5px;
+}
+//ACCOUNT PAGE
+
+#product.container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#product {
+  margin: 10px 0;
+  min-height: 600px;
+}
+
+.i-want {
+  width: 100%;
+  position: relative;
+}
+
+.opened .list-lease-box  {
+  display: block;
+}
+
+.sidebar .btn-warning {
+  font-size: 20px;
+  padding: 6px 20px;
+  width: 100%;
+}
+
+.sidebar .btn-warning i {
+  padding-right: 15px;
+  font-size: 22px;
+}
+
+.list-lease-box {
+  border: 1px solid $lease_box;
+  display: none;
+  border-radius: 0 0 5px 5px;
+  position: absolute;
+  z-index: 100;
+  background: $white;
+  width: 100%;
+  margin-top: -1px;
+}
+
+.i-want .list-lease-box > li > a {
+  border-bottom: none;
+}
+
+.list-lease-box li a {
+  color: $lease_box_a;
+}
+
+.sidebar .nav > li > a > img {
+  margin-right: 5px;
+}
+
+.i-want .list-type-button .down-arrow {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: none;
+  padding: 11px 12px 12px;
+}
+
+.i-want .list-type-button .down-arrow .glyphicon {
+  font-size: 13px;
+  color: $lease_box_a;
+}
+
+.sb-user {
+  margin-bottom: 1px;
+  margin-top: 10px;
+  text-align: center;
+  background: $sb-user-col;
+}
+
+.sb-user h5 {
+  padding: 10px 0;
+  background: $blue_lighter;
+  color: $white;
+}
+
+.img-avatar.w70 {
+  width: 70px;
+}
+
+.img-avatar {
+  border-radius: 50%;
+  width: 30px;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.sb-user p {
+  margin: 10px 0;
+}
+
+.sb-user a {
+  color: $white;
+  padding: 2px 20px 2px 40px;
+  background: url("icon1.png") no-repeat 20px;
+  background-color: $orange_light;
+  border-radius: 10px;
+}
+
+.sb-user h6 {
+  padding: 10px 0;
+  background-color: $blue_lighter;
+  color: $white;
+  text-align: left;
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+.sb-user h6 img {
+  padding: 0 20px 2px 30px;
+}
+
+.personal h6 {
+  padding: 10px 0;
+  background-color: $blue_lighter;
+  color: $white;
+  text-align: left;
+  font-size: 15px;
+  margin: 0;
+}
+
+.personal h6 img {
+  padding: 0 18px 2px 28px;
+}
+
+.personal ul {
+  background: $sb-user-col;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.personal ul li {
+  list-style: none;
+  background-position: 31px center;
+  background-repeat: no-repeat;
+  margin-bottom: 3px;
+}
+
+.ps > li.active-acc a,
+.ps > li:hover a {
+  background-color: $orange_light;
+  text-decoration: none;
+  color: $white;
+}
+
+.ps > li.active-acc a .glyphicon,
+.ps > li:hover a .glyphicon {
+  color: $white;
+}
+
+.personal ul li a .glyphicon {
+  position: absolute;
+  left: 31px;
+  top: 50%;
+  margin-top: -7px;
+  color: $personal_icon;
+  font-size: 12px;
+}
+
+.personal ul li a {
+  color: $lease_box_a;
+  padding: 5px;
+  display: block;
+  padding: 6px 5px 5px 60px;
+  position: relative;
+}
+// edit profile
+
+.cate-crumb {
+  margin-bottom: 12px;
+}
+
+.cate-crumb .tit-pro {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.tit-pro {
+  padding: 10px 0 0;
+  margin-bottom: 0;
+}
+
+.tit-pro li.btn-home {
+  padding-left: 0;
+  padding-right: 4px;
+  margin-right: 4px;
+}
+
+.tit-pro li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 12px;
+  vertical-align: middle;
+  margin-bottom: 5px;
+}
+
+.btn-home {
+  position: relative;
+}
+
+.tit-pro li.arrow {
+  padding-left: 0;
+  padding-right: 0;
+  margin-right: 9px;
+}
+
+.tit-pro li .fa-angle-right {
+  font-size: 21px;
+}
+
+.accout-page .form-group > .control-label {
+  padding-left: 0;
+  padding-right: 10px;
+}
+
+.accout-page .form-group > div {
+  padding-right: 0;
+  padding-left: 10px;
+}
+
+input[type=text] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.form-control {
+  border: 1px solid $white_form;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.edit-img {
+  position: relative;
+  display: inline-block;
+}
+
+.img-avatar.square {
+  border-radius: 0;
+}
+
+.edit-icon {
+  position: absolute;
+  background-color: $back_edit;
+  text-align: center;
+  display: block;
+  width: 100%;
+  height: 24px;
+  top: 50%;
+  margin-top: -12px;
+  cursor: pointer;
+  line-height: 24px;
+  color: $white;
+  display: none;
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background-color: $back_primary;
+  border-color: $bor_primary;
+}
+
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+
+.btn-lg, .btn-group-lg > .btn {
+  border: none !important;
+}
+
+.social {
+  padding: 6px 0px;
+}
+
+.sc-w20 {
+  width: 20px;
 }

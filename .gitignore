@@ -1,4 +1,5 @@
 test/*
+public/uploads
 
 # Ignore file in folder config
 config/database.yml

@@ -9,7 +9,8 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     added_attrs_sign_up = [:firstname, :lastname, :email, :password, :password_confirmation, :remember_me]
-    added_attrs_account_update = [:firstname, :lastname, :avatar, :email, :password, :password_confirmation, :remember_me]
+    added_attrs_account_update = [:firstname, :lastname, :birthday, :avatar, :phone_number, :facebook, :website, :address, :email, :password,
+      :password_confirmation, :remember_me]
     devise_parameter_sanitizer.permit :sign_up, keys: added_attrs_sign_up
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs_account_update
   end

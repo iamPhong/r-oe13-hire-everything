@@ -54,6 +54,20 @@ vi:
       logout: "Đăng xuất"
       login: "Đăng nhập"
       signup: "Đăng kí"
+  shared:
+    sidebar:
+      iwant: "TÔI MUỐN THUÊ"
+      other_product: "Sản phẩm khác"
+      desktop: "Bàn làm việc"
+      man_acc: "Quản lý cá nhân"
+      info: "Thông tin cá nhân"
+      notification: "Thông báo của bạn"
+      man_product: "Quản lý gian hàng"
+      list_lease: "Danh sách cho thuê"
+      list_hire: "Danh sách cần thuê"
+      wishlist: "Danh sách sản phẩm quan tâm"
+      history: "Lịch sử"
+      pay: "Nạp tiền"
   static_pages:
     home:
       test: "Đây là trang home"
