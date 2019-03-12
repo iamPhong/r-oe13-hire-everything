@@ -646,7 +646,7 @@ footer .logo {
   position: relative;
 }
 
-.opened .list-lease-box  {
+.opened .list-lease-box {
   display: block;
 }
 
@@ -916,15 +916,297 @@ input[type=text] {
   cursor: inherit;
   display: block;
 }
+// CREATE-LEASE
 
-.btn-lg, .btn-group-lg > .btn {
+.btn-group-lg > .btn,
+.btn-lg {
   border: none !important;
 }
 
 .social {
-  padding: 6px 0px;
+  padding: 6px 0;
 }
 
 .sc-w20 {
   width: 20px;
+}
+
+.cate-crumb {
+  margin-bottom: 12px;
+}
+
+.cate-crumb .tit-pro {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  padding: 10px 0 0;
+}
+
+.tit-pro li.btn-home {
+  padding-left: 0;
+  padding-right: 4px;
+  margin-right: 4px;
+}
+
+.tit-pro li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 12px;
+  vertical-align: middle;
+  margin-bottom: 5px;
+}
+
+.tit-pro li.arrow {
+  padding-left: 0;
+  padding-right: 0;
+  margin-right: 9px;
+}
+
+.tit-pro li .fa-angle-right {
+  font-size: 21px;
+}
+
+.lease-upload.ul7 {
+  width: auto;
+  margin-top: 0;
+  margin-right: -1%;
+  margin-left: -1%;
+}
+
+.lease-error {
+  color: red;
+}
+
+.lease-upload.ul7 li {
+  padding: 0;
+  list-style: none;
+  width: 48%;
+  text-align: center;
+  float: left;
+  border: 1px solid $white_li;
+  margin: 1%;
+}
+
+.lease-upload li {
+  position: relative;
+}
+
+.ul7 li {
+  height: 125px;
+}
+
+.lease-upload li .btn-file {
+  padding: 10px 0 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+
+.lease-upload li img {
+  max-width: 100%;
+  max-height: 60px;
+}
+
+.lease-upload li .txt-desc {
+  position: absolute;
+  display: block;
+  width: 100%;
+  bottom: 0;
+  margin: 0;
+  padding: 7px 0;
+  height: 35px;
+}
+
+.lease-upload li .remove-icon {
+  display: none;
+  position: absolute;
+  right: 2px;
+  top: 1px;
+  font-size: 14px;
+  color: $blue_lighter;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.lease-upload.ul7 p.help-block {
+  color: $gray_smoke;
+}
+
+.post-lease-page .pro-info {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.tit-border {
+  margin: 5px 0 20px;
+  position: relative;
+}
+
+.tit-border span {
+  text-transform: uppercase;
+  font-size: 18px;
+  border-bottom: 3px solid $blue_lighter;
+}
+
+.tit-border p {
+  height: 3px;
+  width: 55px;
+  background: $orange_light;
+  position: absolute;
+  margin: 0;
+  bottom: -3px;
+}
+
+.pro-info .form-group label.control-label {
+  font-weight: bold;
+}
+
+.pro-info .form-group label {
+  text-align: right;
+  padding-right: 3px;
+}
+
+.pro-info .form-group label span {
+  color: red;
+}
+
+.pro-info .form-group label {
+  text-align: right;
+  padding-right: 3px;
+}
+
+.pro-info .form-group select {
+  height: 34px;
+  border: 1px solid $white_li;
+}
+
+.pad-r-0 {
+  padding-right: 0 !important;
+}
+
+.trade h4 {
+  text-transform: uppercase;
+  text-align: center;
+  color: $white;
+  font-size: 14px;
+  margin: 0;
+  padding: 10px;
+  background: $blue_lighter;
+  border: 1px solid$blue_lighter;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  list-style: none;
+}
+
+.trade ul {
+  padding: 5px 0 5px 23px;
+  border: 1px solid $white_li;
+  border-top: none;
+  margin: 0;
+}
+
+.trade li {
+  padding: 3px 0;
+  list-style-image: url("list-style.png");
+}
+
+.group-number {
+  margin-bottom: 10px;
+}
+
+#price-box {
+  padding-left: 15px;
+}
+
+.input-group-btn .dropdown-toggle {
+  padding-left: 9px;
+  padding-right: 9px;
+}
+
+.form-money,
+.form-paper {
+  text-align: left;
+  position: relative;
+}
+
+.form-money input[type='checkbox'],
+.form-paper input[type='checkbox'],
+.form-sale input[type='checkbox'] {
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  margin: 0;
+  border-radius: 0;
+  border-color: $white_li;
+  background: $white;
+}
+
+.pro-info .form-group input {
+  border-radius: 0;
+  border-color: $white_li;
+  padding-left: 9px;
+  padding-right: 9px;
+}
+
+.form-money input[type='text'],
+.form-money input[type='number'],
+.form-paper input[type='text'],
+.form-sale input[type='text'] {
+  border-radius: 0;
+  border: 1px solid $white_li;
+  padding: 6px 12px;
+  height: 34px;
+  width: 63%;
+}
+
+.input-money {
+  margin-right: 15px;
+  width: 70px !important;
+  text-align: center;
+  margin-left: 50px !important;
+}
+
+.form-money,
+.form-paper {
+  text-align: left;
+  position: relative;
+}
+
+.mar-bt-5 {
+  margin-bottom: 5px !important;
+}
+
+.pro-info .form-group textarea {
+  width: 100%;
+  resize: vertical;
+  border-color: $white_li;
+  height: 20%;
+}
+
+.form-btn,
+.form-sale {
+  text-align: left;
+}
+
+.form-sale input[type='text'] {
+  margin-left: 45px;
+}
+
+.form-btn .btn-review {
+  background: $blue_lighter;
+  color: $white;
+}
+
+.form-btn button {
+  padding: 10px 30px;
+  font-family: San Francisco, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
+  font-size: 15px;
+}
+
+.clickable {
+  cursor: pointer;
 }
