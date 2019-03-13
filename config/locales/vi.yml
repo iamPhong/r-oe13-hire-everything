@@ -2,9 +2,14 @@ vi:
   file_less_than: "Cần nhỏ hơn 5MB"
   complete: "Thành công"
   error: "Thất bại"
+  day: "/ngày"
+  week: "/tuần"
+  month: "/tháng"
+  notfound: "Không tìm thấy"
   guest:
     news_leases:
       form:
+        choose_category: "---Chọn ngành hàng---"
         main_picture: "Ảnh chính"
         sub_picture: "Ảnh phụ"
         help_size: "Dung lượng ảnh tải lên tối đa 8MB"
@@ -40,6 +45,9 @@ vi:
         notice_3: "Tin đăng phải viết bằng tiếng Việt có dấu"
       new:
         post_news_lease: "Đăng tin cho thuê"
+        list_lease: "Danh sách cho thuê"
+      edit:
+        edit_news_lease: "Cập nhật tin đăng"
         list_lease: "Danh sách cho thuê"
   layouts:
     footer:

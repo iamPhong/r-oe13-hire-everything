@@ -1,6 +1,6 @@
 <%= javascript_include_tag "guest/news_leases.js" %>
-<%= provide :btn_text, t(".post_news_lease") %>
-<%= provide :action_path, guest_news_leases_path %>
+<%= provide :btn_text, t(".edit_news_lease") %>
+<%= provide :action_path, guest_news_lease_path %>
 <div id="product" class="post-lease-page">
   <div class="container">
     <div class="row cate-crumb">
@@ -13,25 +13,25 @@
             <%= link_to root_path do %>
             <%= image_tag("home.png") %>
           <% end %>
-          </li>
-          <li class="arrow">
-            <i class="fa fa-angle-right"></i>
-          </li>
-          <li>
-            <%= link_to t(".list_lease"),"#" %>
-          </li>
-          <li class="arrow">
-            <i class="fa fa-angle-right"></i>
-          </li>
-          <li>
-            <span><%= t ".post_news_lease" %></span>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="row cfi-load-page">
-      <%= render "form" %>
+        </li>
+        <li class="arrow">
+          <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+          <%= link_to t(".list_lease"),"#" %>
+        </li>
+        <li class="arrow">
+          <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+          <span><%= t ".edit_news_lease" %></span>
+        </li>
+      </ul>
     </div>
   </div>
+  <div class="row cfi-load-page">
+    <%= render "form" %>
+  </div>
+</div>
 </div>
 <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>&callback=initMapnew&libraries=places"></script>

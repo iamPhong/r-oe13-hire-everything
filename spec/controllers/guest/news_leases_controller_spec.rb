@@ -43,4 +43,20 @@ RSpec.describe Guest::NewsLeasesController, type: :controller do
       end
     end
   end
+
+  describe "UPDATE" do
+    context "with valid attributes" do
+      @lease = FactoryBot.create(:news_lease)
+      let(:attr) do
+        { :description => 'new', :key_search => 'new key' }
+      end
+      before(:each) do
+        patch :update, :id => @lease.id, :news_lease => attr
+        @article.reload
+      end
+      it "updated news lease" do
+        response.should be_successful
+      end
+    end
+  end
 end
