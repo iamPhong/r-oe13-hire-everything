@@ -5,7 +5,7 @@ class CreateNewsLeases < ActiveRecord::Migration[5.2]
       t.references :category, foreign_key: true
       t.references :place, foreign_key: true
       t.references :image, foreign_key: true
-      t.integer :price_type
+      t.integer :price_type, null: false, default: 0
       t.integer :price_value
       t.integer :deposit_price
       t.string :deposit_paper

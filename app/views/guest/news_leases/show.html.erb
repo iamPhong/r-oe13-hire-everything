@@ -1,1 +1,146 @@
-this show
+<div id="product" class="post-lease-page">
+  <div class="container">
+    <div class="row cate-crumb">
+      <div class="col-sm-3 col-md-3 col-lg-3 sidebar">
+        <%= render "shared/iwant" %>
+      </div>
+      <div class="col-sm-9 col-md-9 col-lg-9">
+        <ul class="tit-pro">
+          <li class="btn-home">
+            <%= link_to root_path do %>
+            <%= image_tag("home.png") %>
+            <% end %>
+          </li>
+          <li class="arrow">
+            <i class="fa fa-angle-right"></i>
+          </li>
+          <li>
+            <%= link_to t(".list_lease"),"#" %>
+          </li>
+          <li class="arrow">
+            <i class="fa fa-angle-right"></i>
+          </li>
+          <li>
+            <span><%= @lease.category.name %></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row detail">
+      <div class="col-md-9">
+        <div class="col-sm-6 col-md-5 col-lg-5 left-detail">
+          <div class="wishlist-control">
+            <i class="heart fa fa-heart-o fa-2x pull-right" id="heart-940"></i>
+          </div>
+          <div class="img-cover">
+            <%= image_tag(@lease.image.main_photo.url, class:"img-big", id:"img-main-big-sp", data: { zoom_image: @lease.image.main_photo.url}) %>
+          </div>
+          <ul class="sub-item cfi-view-img" id="list-img-sub">
+            <li>
+              <a href="#" data-image="<%= @lease.image.main_photo.url %>" data-zoom_image="<%= @lease.image.main_photo.url %>">
+                <%= image_tag(@lease.image.main_photo.url, class:"img-responsive") %>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-image="<%= @lease.image.sub_photo.url %>" data-zoom_image="<%= @lease.image.sub_photo.url %>">
+                <%= image_tag(@lease.image.sub_photo.url, class:"img-responsive") %>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-md-7 col-lg-7 right-detail">
+          <span class="triangle"></span>
+          <div class="post-tit ">
+            <h1 class="tit-seo"><%= t ".title" %> <%= @lease.product_name %></h1>
+          </div>
+
+          <p class="price">
+            <span class="tit"><%= t ".price_rent" %></span>
+            <span class="txt">
+              <%= @lease.price_value %>
+              <span class="unit">đ<%= format_price(@lease.price_type) %></span>
+            </span>
+          </p>
+          <p class="dat">
+            <span class="tit"><%= t ".deposit" %></span>
+            <span>
+              <span class="dat-money"><%= @lease.deposit_price if @lease.deposit_price? %> đ</span>;
+              <span class="dat-pp"><%= @lease.deposit_paper if @lease.deposit_paper? %></span>
+            </span>
+          </p>
+          <p class="address">
+            <span class="tit"><%= t ".address" %></span>
+            <%= @lease.place.address %>
+          </p>
+
+          <p class="mobile">
+            <span class="tit"><%= t ".contact" %></span>
+            <a href="tel:0934585865"><%= @lease.lease_phone_number %></a>
+          </p>
+          <p>
+            <span class="tit"><%= t ".owner_lease" %></span>
+            <%= link_to "#", class:"a-color" do %>
+              <%= @lease.user.firstname %> <%= @lease.user.lastname %>
+            <% end %>
+          </p>
+        </div>
+      </div>
+      <div class="col-sm-3 trade hidden-sm hidden-xs">
+        <h4><%= t ".safe_tranfer" %></h4>
+        <ul>
+          <li><%= t ".safe_1" %></li>
+          <li><%= t ".safe_2" %></li>
+          <li><%= t ".safe_3" %></li>
+          <li><%= t ".safe_4" %>
+            <%= link_to "#", class:"a-color", target: "_blank" do %>
+              <%= t ".sub_safe_4" %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row comment-product">
+      <div class="col-sm-4 col-md-4 col-lg-4 maps mar-bt-20">
+        <% if @lease.status == 1 %>
+          <span class="verified"><%= image_tag("check2.png") %><%= t ".verified" %></span>
+        <% end %>
+        <div class="google-maps" id="lease-map" style="position: relative; overflow: hidden;">
+          <iframe allowfullscreen="true" class="map-detail" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_API_KEY'] %>&q=<%= @lease.place.lat %>,<%= @lease.place.lng %>&zoom=14&language=#{I18n.locale}&maptype=driving"></iframe>
+        </div>
+      </div>
+      <div class="col-sm-7 col-md-7 col-lg-7 comment-detail">
+        <div class="desc">
+          <h2 class="post-desc"><%= t ".description" %></h2>
+          <p class="line-color">
+            <span></span>
+          </p>
+            <div class="desc-content cfi-readmore">
+            <%= @lease.description.html_safe %>
+          </div>
+        </div>
+        <div class="comment">
+          <h4><%= t ".rate" %></h4>
+          <span class="count-com">0 <%= t ".comment" %></span>
+          <div id="ifNotCommentUl"></div>
+          <form method="post">
+            <input type="hidden" id="post_id" value="940">
+            <textarea id="comment" placeholder="<%= t ".place_comment" %>" class="form-control"></textarea>
+            <div class="row rate">
+              <div class="col-md-6 pull-right">
+                <button class="btn btn-warning pull-right" id="post-comment">
+                  <%= t ".sent_comment" %>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="div-tag mar-t-15">
+          <span class="tag-tit"><%= t ".tag" %> </span>
+          <%= link_to "#", class:"label lbl-tag" do %>
+            <%= @lease.key_search %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

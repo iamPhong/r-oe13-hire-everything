@@ -33,6 +33,8 @@ class Guest::NewsLeasesController < ApplicationController
     end
   end
 
+  def show; end
+
   private
   def lease_params
     params.require(:news_lease).permit(:category_id, :user_id, :price_type, :price_value, :deposit_price, :deposit_paper,

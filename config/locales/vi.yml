@@ -49,6 +49,27 @@ vi:
       edit:
         edit_news_lease: "Cập nhật tin đăng"
         list_lease: "Danh sách cho thuê"
+      show:
+        list_lease: "Danh sách cho thuê"
+        title: "Cho thuê"
+        price_rent: "Giá thuê:"
+        deposit: "Đặt cọc:"
+        address: "Địa điểm:"
+        contact: "Liên hệ:"
+        owner_lease: "Người cho thuê:"
+        safe_tranfer: "Khuyến cáo an toàn giao dịch"
+        safe_1: "Nên giao dịch tại nhà"
+        safe_2: "Kiểm tra cẩn thận trước khi giao dịch"
+        safe_3: "Nên Thuê sản phẩm được đánh giá tốt"
+        safe_4: "Tìm hiểu về"
+        sub_safe_4: "An toàn giao dịch"
+        verified: "Tin đăng đã được phê duyệt bởi Admin"
+        description: "Mô tả sản phẩm"
+        rate: "ĐÁNH GIÁ SẢN PHẨM:"
+        comment: "Bình luận"
+        place_comment: "Mời bạn nhập nội dung đánh giá bình luận..."
+        sent_comment: "Gửi bình luận"
+        tag: "Tags:"
   layouts:
     footer:
       slogan: "Save Money, Earn Money, Be Handsome"
