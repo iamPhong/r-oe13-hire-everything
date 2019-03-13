@@ -1,6 +1,7 @@
 class Guest::NewsLeasesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_lease, except: %i(new create)
+  before_action :set_lease, except: %i(myleases new create)
+  before_action :correct_user, only: %i(edit destroy)
 
   def new
     @lease = NewsLease.new
@@ -35,6 +36,23 @@ class Guest::NewsLeasesController < ApplicationController
 
   def show; end
 
+  def myleases
+    @leases = NewsLease.select_newslease.load_myleases(current_user.id).order_desc.page(params[:page]).per(Settings.new_lease_page)
+    render "myleases"
+  end
+
+  def destroy
+    respond_to do |format|
+      if @lease.destroy
+        format.js {}
+        format.html {flash[:success] = t("complete")}
+      else
+        format.js {}
+        format.html {flash[:danger] = t("error")}
+      end
+    end
+  end
+
   private
   def lease_params
     params.require(:news_lease).permit(:category_id, :user_id, :price_type, :price_value, :deposit_price, :deposit_paper,
@@ -47,5 +65,10 @@ class Guest::NewsLeasesController < ApplicationController
     return if @lease
     flash[:danger] = t "notfound"
     redirect_to new_guest_news_lease_path
+  end
+
+  def correct_user
+    @lease = current_user.news_leases.find_by id: params[:id]
+    redirect_to root_url unless @lease
   end
 end

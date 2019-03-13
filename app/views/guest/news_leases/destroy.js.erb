@@ -1,0 +1,4 @@
+$('#news-lease-<%= @lease.id %>').bind('ajax:success', function(){
+  $(this).closest('tr').fadeOut();
+  $('.messages-field').append('<div class="alert alert-success"><a href="#" data-dismiss="alert" class="close">×</a>Xóa thành công</div>');
+});

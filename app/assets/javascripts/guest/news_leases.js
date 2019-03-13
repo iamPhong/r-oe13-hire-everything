@@ -62,6 +62,8 @@ $(document).ready(function() {
     zoomLens: false,
   });
 
+  $('[data-toggle="tooltip"]').tooltip();
+
   $('#cb-money').on('change', function() {
     if ($(this).is(':checked')) {
       $('#tb-money').attr('required', '');

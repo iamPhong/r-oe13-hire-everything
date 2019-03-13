@@ -70,6 +70,17 @@ vi:
         place_comment: "Mời bạn nhập nội dung đánh giá bình luận..."
         sent_comment: "Gửi bình luận"
         tag: "Tags:"
+      myleases:
+        list_lease: "Danh sách cho thuê"
+        stt: "Stt"
+        image: "Ảnh"
+        name_product: "Ngành hàng"
+        info: "Thông tin"
+        setting: "Tùy chỉnh"
+      news_lease:
+        lease: "Cho thuê"
+        edit: "Sửa"
+        delete: "Xóa"
   layouts:
     footer:
       slogan: "Save Money, Earn Money, Be Handsome"
