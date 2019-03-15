@@ -6,4 +6,6 @@ $(document).ready(function() {
   $('.phone-info i.fa-close').click(function() {
     $('.phone-info').css('display', 'none');
   });
+
+  $('[data-toggle="tooltip"]').tooltip();
 });

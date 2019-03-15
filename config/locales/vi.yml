@@ -77,6 +77,7 @@ vi:
         name_product: "Ngành hàng"
         info: "Thông tin"
         setting: "Tùy chỉnh"
+        have_not_post: "Bạn chưa có Tin đăng nào"
       news_lease:
         lease: "Cho thuê"
         edit: "Sửa"
@@ -121,6 +122,18 @@ vi:
         comment: "Bình luận"
         place_btn: "Mời bạn nhập nội dung đánh giá bình luận..."
         btn_text: "Gửi xác nhận"
+      news_need_rent:
+        edit: "Sửa"
+        delete: "Xóa"
+        confirm: "Bạn chắc chắn muốn xóa?"
+      myrents:
+        list_rents: "Danh sách cần thuê"
+        stt: "Stt"
+        image: "Ảnh"
+        name_product: "Ngành hàng"
+        info: "Thông tin"
+        setting: "Tùy chỉnh"
+        have_not_post: "Bạn chưa có Tin đăng nào"
   layouts:
     footer:
       slogan: "Save Money, Earn Money, Be Handsome"

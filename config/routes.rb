@@ -10,7 +10,11 @@ Rails.application.routes.draw do
           get :myleases
         end
       end
-      resources :news_need_rents
+      resources :news_need_rents do
+        collection do
+          get :myrents
+        end
+      end
     end
   end
 end

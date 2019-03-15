@@ -1,0 +1,5 @@
+$('#news-rent-<%= @rent.id %>').bind('ajax:success', function(){
+  $(this).closest('tr').fadeOut();
+  var alert = '<div class="alert alert-success"><a href="#" data-dismiss="alert" class="close">×</a><%= I18n.t("complete") %></div>'
+  $('.messages-field').append(alert);
+});

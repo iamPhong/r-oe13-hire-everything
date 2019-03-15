@@ -1,0 +1,45 @@
+<tr id="news-rent-<%= rent.id %>">
+  <td>
+    <%= create_index params[:page], rent_counter, Settings.new_rent_page %>
+  </td>
+  <td class="img-col">
+    <% if rent.picture? %>
+    <%= image_tag(rent.picture.url, alt:"", class: "h-70") %>
+    <% else %>
+    <%= image_tag("no-image.png", alt:"", class: "h-70") %>
+    <% end %>
+  </td>
+  <td class="td-check">
+    <a href="https://thuedo.vn/xe-co">
+      <%= rent.category.name %>
+    </a>
+    <% if rent.status? %>
+      <i class="fa fa-check" data-toggle="tooltip" data-placement="top"
+        title="" data-original-title="Tin đã được duyệt"></i>
+    <% else %>
+      <i class="fa fa-spinner fa-spin" data-toggle="tooltip" data-placement="top"
+        title="" data-original-title="Đang chờ phê duyệt"></i>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to guest_news_need_rent_path(rent) do %>
+      <%= t ".lease" %> <%= rent.product_name %>
+    <% end %>
+  </td>
+  <td class="action-col col-left">
+    <div>
+      <%= link_to edit_guest_news_need_rent_path(rent), class:"btn btn-link pad-lr-0 pad-bt-1 edit-post" do %>
+        <i class="fa fa-pencil-square-o"></i>
+        <%= t ".edit" %>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to guest_news_need_rent_path(rent), method: :delete, data: {confirm: t(".confirm"), remote: true} do %>
+        <button class="btn btn-link pad-lr-0 pad-bt-1 cfi-remove-post">
+          <i class="glyphicon glyphicon-trash"></i>
+          <%= t ".delete" %>
+        </button>
+      <% end %>
+    </div>
+  </td>
+</tr>

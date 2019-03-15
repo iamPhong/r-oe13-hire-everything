@@ -1,4 +1,3 @@
-<%= javascript_include_tag "guest/news_leases.js" %>
 <div id="product" class="container accout-page">
   <div class="row">
     <%= render "shared/sidebar" %>
@@ -13,7 +12,7 @@
             <i class="fa fa-angle-right"></i>
           </li>
           <li>
-            <span><%= t ".list_lease" %></span>
+            <span><%= t ".list_rents" %></span>
           </li>
         </ul>
       </div>
@@ -29,16 +28,16 @@
                 <th class="action-col"><%= t ".setting" %></th>
               </tr>
             </thead>
-            <tbody id="myleases">
-              <% if @leases.present? %>
-                <%= render partial: "news_lease", collection: @leases, as: :lease %>
+            <tbody id="myrents">
+              <% if @rents.present? %>
+                <%= render partial: "news_need_rent", collection: @rents, as: :rent %>
               <% else %>
                 <td colspan="6"><center><%= t ".have_not_post" %></center></td>
               <% end %>
             </tbody>
           </table>
           <div class="text-center" id="paginator">
-            <%= paginate @leases, remote: true, theme: "twitter-bootstrap-3" %>
+            <%= paginate @rents, theme: "twitter-bootstrap-3" %>
           </div>
         </div>
       </div>
