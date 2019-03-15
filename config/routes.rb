@@ -10,6 +10,7 @@ Rails.application.routes.draw do
           get :myleases
         end
       end
+      resources :news_need_rents
     end
   end
 end

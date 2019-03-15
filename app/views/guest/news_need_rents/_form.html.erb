@@ -1,0 +1,68 @@
+<%= form_for [:guest,@rent], url: yield(:action_path), html:{class:"form-horizontal"} do |f| %>
+<%= f.hidden_field :user_id, value: current_user.id %>
+  <div class="form-group">
+    <label class="control-label col-sm-3">
+      <%= t ".category" %>
+      <span class="require">(*)</span>
+    </label>
+    <div class="col-sm-9">
+      <%= f.select :category_id, @category.collect {|x| [x.name, x.id]},{include_blank: t(".choose_category")}, class:"form-control field-require", required:"required" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-3">
+      <%= t ".name_rent" %>
+      <span class="require">(*)</span>
+    </label>
+    <div class="col-sm-9">
+      <%= f.text_field :product_name, class: "form-control", required:"required" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-3">
+      <%= t ".description" %>
+    </label>
+    <div class="col-sm-9">
+      <%= f.cktext_area :description, class:"form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-3">
+      <%= t ".picture" %>
+    </label>
+    <div class="col-sm-9">
+      <ul class="row ul7 lease-upload mar-t-0" style="max-width: 300px">
+        <li class="row-img uploaded">
+          <span class="btn btn-file">
+            <%= image_tag("camera.png", id:"rent-pic") %>
+            <%= f.file_field :picture, class: "rent-pic-upload" %>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-3">
+      <%= t ".address" %>
+      <span class="require">(*)</span>
+    </label>
+    <div class="col-sm-9">
+      <%= f.text_field :address, class:"form-control", required:"required" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-3">
+      <%= t ".phone_number" %>
+      <span class="require">(*)</span>
+    </label>
+    <div class="col-sm-9">
+      <%= f.text_field :phone_number, class:"form-control", required:"required" %>
+      <p class="help-block"><%= t ".phone_help" %></p>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-12 text-center">
+      <button class="btn btn-warning" type="submit"><%= yield(:btn_text) %></button>
+    </div>
+  </div>
+<% end %>
