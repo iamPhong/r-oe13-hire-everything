@@ -1600,3 +1600,61 @@ a:hover {
   max-width: 100%;
   max-height: 60px;
 }
+
+//SHOW RENT
+
+.right-detail .div-online {
+  position: relative;
+}
+
+.right-detail .div-online .dropdown {
+  position: static;
+}
+
+.right-detail .div-online > * {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 7px;
+}
+
+.right-detail .phone-detail {
+  margin-left: 0;
+  float: left;
+}
+
+.right-detail .phone-info {
+  border-radius: 0;
+  margin-top: 0;
+  padding: 15px 15px 10px;
+}
+
+.phone-info i.fa-close {
+  color: #EC971F !important;
+  cursor: pointer;
+  position: absolute;
+  right: 3px;
+  top: -1px;
+}
+
+.right-detail .phone-info p {
+  white-space: normal;
+}
+
+.right-detail .phone-info {
+  display: none;
+}
+
+.right-detail .phone-info h5 {
+  text-align: right;
+}
+
+.right-detail .phone-info button {
+  margin: 5px 0 0;
+  padding: 6px 20px;
+}
+
+.desc .line-blue {
+  width: 50%;
+  height: 3px;
+  background: $right_detail_blu;
+}

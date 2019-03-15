@@ -1,12 +1,9 @@
-var rent_preview = $('#rent-pic');
+$(document).ready(function() {
+  $('.dropdown').click(function() {
+    $('.phone-info').css('display', 'block');
+  });
 
-$('.rent-pic-upload').change(function(event) {
-  var input = $(event.currentTarget);
-  var file = input[0].files[0];
-  var reader = new FileReader();
-  reader.onload = function(e) {
-    image_base64 = e.target.result;
-    rent_preview.attr('src', image_base64);
-  };
-  reader.readAsDataURL(file);
+  $('.phone-info i.fa-close').click(function() {
+    $('.phone-info').css('display', 'none');
+  });
 });
