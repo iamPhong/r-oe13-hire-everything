@@ -1,3 +1,141 @@
-<div class="container">
-  <%= t (".test") %>
+<%= javascript_include_tag "custom.js" %>
+<div class="title">
+  <hgroup>
+    <h2>
+      <span class="sp1"><%= t ".solgan1" %></span>
+      <span class="sp2"><%= t ".slogan2" %></span>
+    </h2>
+    <h3>
+      <span class="sp1"><%= t ".slogan3" %></span>
+      <span class="sp2"><%= t ".slogan4" %></span>
+    </h3>
+    <h4><%= t ".sharing" %></h4>
+  </hgroup>
+</div>
+<div class="slide">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="owl-carousel owl-theme">
+        <div class="item"><%= image_tag("banner1.png", class:"img-responsive", alt:"") %></div>
+        <div class="item"><%= image_tag("banner2.png", class:"img-responsive", alt:"") %></div>
+        <div class="item"><%= image_tag("banner3.png", class:"img-responsive", alt:"") %></div>
+        <div class="item"><%= image_tag("banner4.png", class:"img-responsive", alt:"") %></div>
+        <div class="item"><%= image_tag("banner5.png", class:"img-responsive", alt:"") %></div>
+        <div class="item"><%= image_tag("banner6.png", class:"img-responsive", alt:"") %></div>
+        <div class="item"><%= image_tag("banner7.png", class:"img-responsive", alt:"") %></div>
+        <div class="item"><%= image_tag("banner8.png", class:"img-responsive", alt:"") %></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="search" class="hidden-xs">
+  <div class="container">
+    <div class="input-group search">
+      <input class="form-control cfi-search-input ui-autocomplete-input" name="q" type="text" value=""
+       placeholder="<%= t ".search_place" %>" data="autocomplete-search-main" autocomplete="off">
+      <span class="input-group-addon btn-s-submit">
+        <button type="submit" class="btn btn-primary cfi-btt-search">
+          <i class="fa fa-search fa-2x"></i>
+        </button>
+      </span>
+    </div>
+  </div>
+</div>
+<div id="content">
+  <h2 class="text-center mar-t-0 h2-orange"><%= t ".iwant" %></h2>
+  <div class="social">
+    <div class="container">
+      <ul>
+        <% @category.each do |c| %>
+        <li>
+          <%= link_to "#" do %>
+            <center>
+              <%= image_tag(c.icon, alt:"") %>
+              <p><%= c.name %></p>
+            </center>
+          <% end %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="correlative pad-bt-10">
+  <div class="container">
+    <div class="content-title text-center">
+      <span>
+        <%= link_to "#" do %>
+          <%= t ".product_care" %>
+        <% end %>
+      </span>
+    </div>
+    <div class="foot-favorite owl-carousel owl-theme owl-responsive-1000 owl-loaded" id="cfi-foot-favorite">
+      <div class="owl-stage-outer">
+        <div class="owl-stage">
+          <% @leases_hot.each do |h| %>
+            <div class="owl-item cloned">
+              <div class="item-media">
+                <div class="media">
+                  <%= link_to "#", class:"pull-left" do %>
+                    <%= image_tag(h.image.main_photo.url, class:"media-object", alt: h.product_name) %>
+                  <% end %>
+                  <div class="media-body">
+                    <p class="title">
+                      <%= link_to "#" do %>
+                        <%= t ".lease" %> <%= h.product_name %>
+                      <% end %>
+                    </p>
+                    <p class="price over-dot">
+                      <%= t ".price" %>
+                      <span>
+                        <%= h.price_value %>
+                        <span class="unit">đ<%= format_price(h.price_type) %></span>
+                      </span>
+                    </p>
+                    <p class="item-address over-dot">
+                      <i class="fa fa-map-marker"></i>
+                      <%= h.place.address %>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="row mar-bt-10 pad-r-6">
+      <%= link_to "#", class:"pull-right" do %>
+        <%= t ".more" %>
+        <i class="fa fa-angle-double-right"></i>
+      <% end %>
+    </div>
+    <div class="content-title text-center">
+      <span>
+        <%= link_to "#" do %>
+          <%= t ".list_need_rent" %>
+        <% end %>
+      </span>
+    </div>
+    <div class="news container-fluid hd-need-rental">
+      <div class="row">
+        <ul class="col-sm-12 ul-hire">
+          <% @news_rents.each do |r| %>
+            <li>
+              <%= link_to "#", class:"hd-need-a" do %>
+                <%= t ".need_rent" %> <%= r.product_name %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+        <span class="line-col"></span>
+      </div>
+      <div class="row mar-bt-5 pad-r-10">
+        <%= link_to "#", class:"pull-right" do %>
+          <%= t ".more" %>
+          <i class="fa fa-angle-double-right"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

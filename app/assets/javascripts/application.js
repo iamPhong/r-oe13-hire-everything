@@ -3,6 +3,7 @@
 //= require i18n/translations
 //= require jquery
 //= require bootstrap-sprockets
+//= require owl.carousel
 //= require rails-ujs
 //= require ckeditor/init
 //= require jquery.elevatezoom

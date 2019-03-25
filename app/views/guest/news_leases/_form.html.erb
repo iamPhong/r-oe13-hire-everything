@@ -49,16 +49,8 @@
         <span>(*)</span>
       </label>
       <div class="col-sm-9">
-        <select class="form-control field-require" required="required" name="news_lease[category_id]">
-          <% if @lease.category_id? %>
-            <option value="<%= @lease.category_id %>"><%= @lease.category.name %></option>
-          <% else %>
-            <option value="" selected="selected"><%= t ".choose_category" %></option>
-          <% end %>
-          <% @category.each do |c| %>
-            <option value="<%= c.id %>"><%= c.name %></option>
-          <% end %>
-        </select>
+        <%= f.select :category_id, @category.collect {|x| [x.name, x.id]},
+          {include_blank: t(".choose_category")}, class:"form-control field-require", required:"required" %>
       </div>
     </div>
 
