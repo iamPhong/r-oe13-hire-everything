@@ -7,6 +7,16 @@ vi:
   month: "/tháng"
   notfound: "Không tìm thấy"
   guest:
+    category:
+      show:
+        news: "TIN TỨC"
+        no_product: "Không có sản phẩm nào"
+        news_update: "mới cập nhật"
+        cheap: "giá rẻ nhất"
+        can_sell: "đồ có thể bán"
+      leases_category:
+        lease: "Cho thuê"
+        deposit: "Đặt cọc:"
     news_leases:
       form:
         choose_category: "---Chọn ngành hàng---"

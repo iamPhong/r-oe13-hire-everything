@@ -15,6 +15,7 @@ Rails.application.routes.draw do
           get :myrents
         end
       end
+      resources :category, only: :show
     end
   end
 end
