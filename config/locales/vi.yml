@@ -95,6 +95,9 @@ vi:
         lease: "Cho thuê"
         edit: "Sửa"
         delete: "Xóa"
+      search:
+        result_search: "Kết quả tìm kiếm"
+        result_search_for: "Kết quả tìm kiếm cho"
     news_need_rents:
       form:
         category: "Ngành hàng"

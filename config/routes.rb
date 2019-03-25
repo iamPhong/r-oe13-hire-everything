@@ -10,6 +10,9 @@ Rails.application.routes.draw do
         collection do
           get :myleases
         end
+        collection do
+          match 'search' => 'news_leases#search', via: [:get, :post], as: :search
+        end
       end
       resources :news_need_rents do
         collection do
