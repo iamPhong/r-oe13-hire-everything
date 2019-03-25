@@ -30,6 +30,8 @@ gem "bootstrap-kaminari-views", "~> 0.0.5"
 gem "i18n-js", "~> 3.2.1"
 gem "owlcarousel-rails"
 gem "impressionist"
+gem "ratyrate", :github => "wazery/ratyrate"
+
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

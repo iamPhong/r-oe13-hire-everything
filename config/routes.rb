@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  post '/rate' => 'rater#create', :as => 'rate'
   scope "(:locale)", locale: /en|vi/ do
     root "static_pages#home"
     devise_for :users
