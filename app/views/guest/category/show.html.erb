@@ -43,13 +43,13 @@
         <div class="tabpanel" role="tabpanel">
           <ul class="nav nav-tabs cfi-parent-a" role="tablist">
             <li class="tab-new active" role="presentation">
-              <%= link_to t(".news_update"), "#" %>
+              <%= link_to t(".news_update"), guest_category_path(@category, :filter => "newest") %>
             </li>
             <li class="tab-price" role="presentation">
-              <%= link_to t(".cheap"), "#" %>
+              <%= link_to t(".cheap"), guest_category_path(@category, :filter => "cheaper") %>
             </li>
             <li class="tab-buy" role="presentation">
-              <%= link_to t(".can_sell"), "#" %>
+              <%= link_to t(".can_sell"), guest_category_path(@category, :filter => "can_sell") %>
             </li>
           </ul>
           <div class="tab-content">

@@ -1,0 +1,45 @@
+<div id="product" class="post-lease-page">
+  <div class="container">
+    <div class="row cate-crumb">
+      <div class="col-sm-3 col-md-3 col-lg-3 sidebar">
+        <%= render "shared/iwant" %>
+      </div>
+      <div class="col-sm-9 col-md-9 col-lg-9 post post-hire">
+        <ul class="tit-pro">
+          <li class="btn-home">
+            <%= link_to root_path do %>
+            <%= image_tag("home.png") %>
+            <% end %>
+          </li>
+          <li class="arrow">
+            <i class="fa fa-angle-right"></i>
+          </li>
+          <li>
+            Từ khóa
+          </li>
+          <li class="arrow">
+            <i class="fa fa-angle-right"></i>
+          </li>
+          <li>
+            <%= @key_tag %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12 product cfi-receive-product">
+        <h3 class="div-txt-search a-state"><%= @key_tag %></h3>
+        <div class="tabpanel" role="tabpanel">
+          <div class="tab-content">
+            <div class="row tab-pane active" id="newest" role="tabpanel">
+              <%= render partial: "guest/category/leases_category", collection: @result, as: :s %>
+            </div>
+            <div class="text-center" id="paginator">
+              <%= paginate @result, theme: "twitter-bootstrap-3" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
