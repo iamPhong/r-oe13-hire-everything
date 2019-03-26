@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_18_143032) do
+ActiveRecord::Schema.define(version: 2019_03_26_032558) do
 
   create_table "average_caches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "rater_id"
@@ -187,6 +187,15 @@ ActiveRecord::Schema.define(version: 2019_03_18_143032) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "wishlists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "news_lease_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["news_lease_id"], name: "index_wishlists_on_news_lease_id"
+    t.index ["user_id"], name: "index_wishlists_on_user_id"
+  end
+
   add_foreign_key "comments", "news_leases"
   add_foreign_key "comments", "news_need_rents"
   add_foreign_key "comments", "users"
@@ -196,4 +205,6 @@ ActiveRecord::Schema.define(version: 2019_03_18_143032) do
   add_foreign_key "news_leases", "users"
   add_foreign_key "news_need_rents", "categories"
   add_foreign_key "news_need_rents", "users"
+  add_foreign_key "wishlists", "news_leases"
+  add_foreign_key "wishlists", "users"
 end
